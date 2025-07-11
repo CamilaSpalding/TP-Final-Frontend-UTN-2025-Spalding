@@ -1,4 +1,4 @@
-import mook_data from "../data/contact-mook"
+import mook_data from "../data/contact-mook.js"
 
 export const getContactList = () => {
     return mook_data.contacts
