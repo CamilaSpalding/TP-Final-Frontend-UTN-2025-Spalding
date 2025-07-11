@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react'
-import { getContactList } from '../service/contactService'
+import { getContactList } from '../services/contactService'
 
 export const ContactsContext = createContext({
     contacts: [],
@@ -13,8 +13,8 @@ const ContactsContextProvider = ({ children }) => {
 
     setTimeout(
         () => {
-            const contact_list = getContactList()
-            setContacts(contact_list)
+            const contactList = getContactList()
+            setContacts(contactList)
             setIsloadingContacts(false)
         },
         1000
