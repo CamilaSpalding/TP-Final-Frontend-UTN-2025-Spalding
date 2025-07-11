@@ -1,5 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router'
+import ContactsContext from './Contexts/ContactsContext'
 
 function App () {
 
@@ -8,7 +9,11 @@ function App () {
         <Routes>
           <Route 
             path='/'
-            element={}  
+            element={
+              <ContactContextProvider>
+                <HomeScreen />
+              </ContactContextProvider>
+            }  
           />
         </Routes>
 
