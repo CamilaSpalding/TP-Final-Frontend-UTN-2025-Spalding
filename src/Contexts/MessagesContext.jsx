@@ -35,7 +35,7 @@ const MessagesContextProvider = ({ children }) => {
 
     const addNewMessage = (text) => {
         const newMessage = {
-            id: messages.length + 1, // Rever, buscar una forma de generar IDs que no dependan del orden ni cantidad de mensajes. Que siempre sea único.
+            id: `${Date.now()}-${Math.floor(Math.random() * 10000)}`,
             sender: 'Yo',
             sent_time: new Date().toLocaleTimeString([], {
                 hour: '2-digit',
@@ -46,9 +46,9 @@ const MessagesContextProvider = ({ children }) => {
             status: 'no-recibido'
         }
 
-        const cloneMessages = [...messages]
-        cloneMessages.push(newMessage)
-        setMessages(cloneMessages)
+        const previousMessages = [...messages]
+        previousMessages.push(newMessage)
+        setMessages(previousMessages)
     }
 
     const handleDeleteMessage = (message_id) => {
