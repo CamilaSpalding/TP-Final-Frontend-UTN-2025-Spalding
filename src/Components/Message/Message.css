@@ -1,0 +1,31 @@
+.my-message {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.their-message {
+    background-color: #f1f0f0;
+    align-self: flex-start;
+    text-align: left;
+}
+
+.chat-bubble-tail.tail-right::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 10px;
+    border-top: 10px solid transparent;
+    border-left: 10px solid #dcf8c6;
+    border-bottom: 10px solid transparent;
+}
+
+.chat-bubble-tail.tail-left::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    border-top: 10px solid transparent;
+    border-right: 10px solid #f1f0f0;
+    border-bottom: 10px solid transparent;
+}

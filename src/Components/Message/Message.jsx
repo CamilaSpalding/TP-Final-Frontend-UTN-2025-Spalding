@@ -1,15 +1,27 @@
 import React, { useContext } from 'react'
 import { MessagesContext } from '../../Contexts/MessagesContext'
+import './Message.css'
 
 // FORMA VISTA EN CLASE
-/* function Message({id, sender, sent_time, text, status}) {
+/* function Message({emisor, hora, id, texto, status}) {
 
     const { handleDeleteMessage } = useContext(MessagesContext)
 
-    const classNames = 
+    const classNames = {
+        message: 'chat-dialog'
+    }
+    if(emisor === 'YO'){
+        classNames.message = classNames.message + 'chat-dialog__my-message'
+    }
+
     return (
-        <div>
-            
+        <div className={classNames.message}>
+            <span>{texto}</span>
+            <div>
+                <span>{hora}</span>
+                <span>ll</span>
+                <button onClick={() => {handleDeleteMessage(id)}}>Eliminar</button>
+            </div>
         </div>
     )
 }
@@ -18,5 +30,46 @@ export default Message */
 
 // MI MANERA
 function Message ({id, sender, sent_time, text, status}) {
-    const { handleSoftDeleteMessage } = useContext(MessagesContext)
+    const { handleDeleteMessage, handleSoftDeleteMessage } = useContext(MessagesContext)
+
+    const myMessage = sender.toLowerCase() === 'yo'
+    const messageClass = myMessage
+        ? 'chat-dialog my-message'
+        : 'chat-dialog their-message'
+
+    const chatBubbleTailClass = myMessage
+        ? 'chat-bubble-tail tail-right'
+        : 'chat-bubble-tail tail-left'
+
+    const handleDelete = () => {
+        if (myMessage) {
+            handleSoftDeleteMessage(message_id)
+        } else {
+            handleDeleteMessage(message_id)
+        }
+    }
+
+    return (
+        <div className={messageClass}>
+            <div className="message-content">
+                <span className="message-text">
+                    {text}
+                    <div className="message-meta">
+                        <span className="message-time">{sent_time}</span>
+                        {myMessage && (
+                            <span className="message-status">
+                                {status ? '✔✔' : '✔'}
+                            </span>
+                        )}
+                        <button onClick={handleDelete} className="delete-button">
+                            Delete
+                        </button>
+                    </div>
+                </span>
+            </div>
+            <div className={chatBubbleTailClass}></div>
+        </div>
+    )
 }
+
+export default Message
