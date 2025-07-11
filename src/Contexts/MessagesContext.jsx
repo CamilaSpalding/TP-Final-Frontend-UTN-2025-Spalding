@@ -37,7 +37,11 @@ const MessagesContextProvider = ({ children }) => {
         const newMessage = {
             id: messages.length + 1, // Rever, buscar una forma de generar IDs que no dependan del orden ni cantidad de mensajes. Que siempre sea único.
             sender: 'Yo',
-            sent_time: '21:05', // Rever, buscar una forma de que cargue la fecha real de cuando se envía un mensaje nuevo.
+            sent_time: new Date().toLocaleTimeString([], {
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false
+            }),
             text: text,
             status: 'no-recibido'
         }

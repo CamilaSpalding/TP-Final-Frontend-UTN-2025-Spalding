@@ -42,7 +42,7 @@ const mook_data = {
                 text: 'cucaracha rubia',
                 status: 'recibido' // true | false         
             },
-            unread_messages: 0,
+            unread_messages: 2,
             messages: [
                 {
                     id: 1,
