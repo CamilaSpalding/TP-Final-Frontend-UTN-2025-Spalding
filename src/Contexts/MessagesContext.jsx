@@ -7,7 +7,10 @@ export const MessagesContext = createContext(
         isMessagesLoading: true,
         loadMessages: (contact_id) => {},
         addNewMessage: (text) => {},
-        handleDeleteMessage: (message_id) => {}
+        handleDeleteMessage: (message_id) => {},
+        // Funciones nuevas:
+        handleEditMessage: (message_id, newText) => {},
+        handleSoftDeleteMessage: (message_id) => {}
 
     }
 )
@@ -60,6 +63,51 @@ const MessagesContextProvider = ({ children }) => {
         }
         setMessages(updatedMessageList)
     }
+
+    // AGREGAR FUNCIONES NUEVAS
+    // Agregar la función de editar un mensaje:
+    const handleEditMessage = (message_id, newText) => {
+        
+        const previousMessages = [...messages]
+        const updatedMessages = []
+
+        for (const mesage of previousMessages) {
+            if (message_id.id === message_id) {
+                const editedMessage = {
+                    ...message,
+                    text: newText,
+                    edited: true
+                }
+                updatedMessages.push(editedMessages)
+            } else {
+                updatedMessages.push(message)
+            }
+        }
+
+        setMessages(updatedMessages)
+    }
+
+    // Agregar la función para marcar visualmente como "eliminado" un mensaje:
+    // Para esta función hay que tener un componente donde se muestre cada mensaje
+    const handleSoftDeleteMessage = (message_id) => {
+        const previousMessages = [...messages]
+        const updatedMessages = []
+    
+        for (const message of previousMessages) {
+            if (message.id === message_id) {
+                const deletedMessage = {
+                    ...message,
+                    text: 'Mensaje eliminado',
+                    deleted: true
+                }
+                updatedMessages.push(deletedMessage)
+            } else {
+                updatedMessages.push(message)
+            }
+        }
+    
+        setMessages(updatedMessages)
+    }
     
     return (
         <MessagesContext.Provider
@@ -69,7 +117,10 @@ const MessagesContextProvider = ({ children }) => {
                     isMessagesLoading: isMessagesLoading,
                     loadMessages: loadMessages,
                     addNewMessage: addNewMessage,
-                    handleDeleteMessage: handleDeleteMessage
+                    handleDeleteMessage: handleDeleteMessage,
+                    // Funciones nuevas:
+                    handleEditMessage: handleEditMessage,
+                    handleSoftDeleteMessage: handleSoftDeleteMessage
                 }
             }
         >
