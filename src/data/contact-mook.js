@@ -3,58 +3,58 @@
 const mook_data = {
     constacts: [
         {
-            id:,
-            name:,
-            last_time_connecte:,
-            profile_pic:,
-            last message: {
-                id:,
-                text:                
+            id: 1,
+            name: 'cami',
+            last_time_connecte: '',
+            profile_pic: '',
+            last_message: {
+                id: 1,
+                text:  ''              
             },
-            unread_messages:,
+            unread_messages: 0,
             messages: [
                 {
-                    emisor:,
-                    hora:,
-                    id:,
-                    texto:,
-                    status:
+                    emisor: '',
+                    hora: '',
+                    id: 1,
+                    texto: '',
+                    status: ''
                 },
                 {
-                    emisor:,
-                    hora:,
-                    id:,
-                    texto:,
-                    status:
+                    emisor: '',
+                    hora: '',
+                    id: 0,
+                    texto: '',
+                    status: ''
                 },
             ]
         },
         {
-            id:,
-            name:,
-            last_time_connecte:,
-            profile_pic:,
-            last message: {
-                id:,
-                text:                
+            id: 1,
+            name: 'cami',
+            last_time_connecte: '',
+            profile_pic: '',
+            last_message: {
+                id: 1,
+                text: ''          
             },
-            unread_messages:,
+            unread_messages: 0,
             messages: [
                 {
-                    emisor:,
-                    hora:,
-                    id:,
-                    texto:,
-                    status:
+                    emisor: '',
+                    hora: '',
+                    id: 1,
+                    texto: '',
+                    status: ''
                 },
                 {
-                    emisor:,
-                    hora:,
-                    id:,
-                    texto:,
-                    status:
+                    emisor: '',
+                    hora: '',
+                    id: 0,
+                    texto: '',
+                    status: ''
                 },
             ]
         },
-    ]}
+    ]
 }
