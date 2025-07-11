@@ -4,6 +4,7 @@ import { getContactById } from '../services/contactService'
 export const ContactDetailContext = createContext(
     {
         contactDetail: {},
+        isLoadingContactDetail: {},
         loadContact: (contact_id) => {}
     }
 )
@@ -40,4 +41,4 @@ const ContactDetailContextProvider = ({ children }) => {
     )
 }
 
-export default ContactDetailContext
+export default ContactDetailContextProvider
