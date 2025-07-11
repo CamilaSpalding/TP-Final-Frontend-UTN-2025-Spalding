@@ -7,10 +7,8 @@ export const ContactsContext = createContext({
 })
 
 const ContactsContextProvider = ({ children }) => {
-    const [contacts, setContacts] = useState(
-        []
-    )
-
+    
+    const [contacts, setContacts] = useState([])
     const [isLoadingContacts, setIsloadingContacts] = useState(true)
 
     setTimeout(
