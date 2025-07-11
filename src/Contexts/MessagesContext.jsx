@@ -4,7 +4,9 @@ import { getMessagesByContactId } from '../services/messagesService'
 export const MessagesContext = createContext(
     {
         messages: [],
-        
+        isMessagesLoading: true,
+        loadMessages: (contact_id) => {},
+                
     }
 )
 
