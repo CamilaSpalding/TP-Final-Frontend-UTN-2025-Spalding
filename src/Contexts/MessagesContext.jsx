@@ -65,7 +65,7 @@ const MessagesContextProvider = ({ children }) => {
                     isMessagesLoading: isMessagesLoading,
                     loadMessages: loadMessages,
                     addNewMessage: addNewMessage,
-                    handleDeleteMessage: (message_id) => {}
+                    handleDeleteMessage: handleDeleteMessage
                 }
             }
         >
