@@ -4,33 +4,42 @@ import { getMessagesByContactId } from '../services/messagesService'
 export const MessagesContext = createContext(
     {
         messages: [],
-        handleDeleteMessage: (message_id) => {},
+        
     }
 )
 
 const MessagesContextProvider = ({ children }) => {
     
     const [messages, setMessages] = useState([])
+    const [isMessagesLoading, setIsMessagesLoading] = useState(true)
 
-    const handleDleteMessage = (message_id) => {
-        const messageListUpdated = []
-        for (const message of messages) {
-            if (message.id !== message_id) {
-                messageListUpdated.push(message)
-            }
-        }
-        setMessages(messageListUpdated)
+    const loadMessages = (contact_id) => {
+        setIsMessagesLoading(true)
+
+        setTimeout(
+            () => {
+                const messages = getMessagesByContactId(contact_id)
+                setMessages(messages)
+                setIsMessagesLoading(false)
+            },
+            1500
+        )
+
+        const messages = getMessagesByContactId(contact_id)
+        setMessages(messages)
     }
-
+    
     return (
         <MessagesContext.Provider
             value={
                 {
                     messages: messages,
-                    handleDeleteMessage: handleDleteMessage
+                    isMessagesLoading: isMessagesLoading,
+                    loadMessages: loadMessages
                 }
             }
         >
+            {children}
         </MessagesContext.Provider>
     )
 }
