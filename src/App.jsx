@@ -1,6 +1,12 @@
 import React from 'react'
 import { Routes, Route } from 'react-router'
-import ContactsContext from './Contexts/ContactsContext'
+import ContactsContextProvider from './Contexts/ContactsContext'
+import MessagesContextProvider from './Contexts/MessagesContext'
+import ContactDetailContextProvider from './Contexts/ContactDetailContext'
+import HomeScreen from './Screens/HomeScreen/HomeScreen'
+import ChatScreen from './Screens/ChatScreen/ChatScreen'
+import ContactDetailScreen from './Screens/ContactDetailScreen/ContactDetailScreen'
+
 
 function App () {
 
@@ -10,9 +16,9 @@ function App () {
           <Route 
             path='/'
             element={
-              <ContactContextProvider>
+              <ContactsContextProvider>
                 <HomeScreen />
-              </ContactContextProvider>
+              </ContactsContextProvider>
             }  
           />
 
