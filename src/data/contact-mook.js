@@ -1,3 +1,5 @@
+/* import imagen from  */
+
 // Este archivo solo contiene los datos de los contactos, simula ser un servidor.
 
 const mook_data = {
@@ -5,54 +7,56 @@ const mook_data = {
         {
             id: 1,
             name: 'cami',
-            last_time_connecte: '',
-            profile_pic: '',
+            last_time_connected: '13:00',
+            profile_pic: '../assets/images/imagen.jpg',
             last_message: {
                 id: 1,
-                text:  ''              
+                text:  'hola Francesco',
+                status: 'recibido' // true | false        
             },
             unread_messages: 0,
             messages: [
                 {
-                    emisor: '',
-                    hora: '',
                     id: 1,
-                    texto: '',
-                    status: ''
+                    sender: 'a',
+                    sent_time: '00:01',
+                    text: 'hola 1',
+                    status: 'recibido' // true | false
                 },
                 {
-                    emisor: '',
-                    hora: '',
-                    id: 0,
-                    texto: '',
-                    status: ''
+                    id: 2,
+                    sender: 'b',
+                    sent_time: '00:02',
+                    text: 'hola 2',
+                    status: 'recibido' // true | false
                 },
             ]
         },
         {
-            id: 1,
-            name: 'cami',
-            last_time_connecte: '',
-            profile_pic: '',
+            id: 2,
+            name: 'fran',
+            last_time_connected: '11:30',
+            profile_pic: '../assets/images/imagen.jpg',
             last_message: {
-                id: 1,
-                text: ''          
+                id: 2,
+                text: 'cucaracha rubia',
+                status: 'recibido' // true | false         
             },
             unread_messages: 0,
             messages: [
                 {
-                    emisor: '',
-                    hora: '',
                     id: 1,
-                    texto: '',
-                    status: ''
+                    sender: 'a',
+                    sent_time: '00:01',
+                    text: 'mi rubia',
+                    status: 'recibido' // true | false
                 },
                 {
-                    emisor: '',
-                    hora: '',
-                    id: 0,
-                    texto: '',
-                    status: ''
+                    id: 2,
+                    sender: 'b',
+                    sent_time: '00:02',
+                    text: 'cucaracha de dos patas',
+                    status: 'recibido' // true | false
                 },
             ]
         },
