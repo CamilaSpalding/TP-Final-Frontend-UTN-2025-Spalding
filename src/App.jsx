@@ -15,6 +15,24 @@ function App () {
               </ContactContextProvider>
             }  
           />
+
+          <Route 
+            path='/contact/:contact_id/chat'
+            element={
+              <MessagesContextProvider>
+                <ChatScreen />
+              </MessagesContextProvider>
+            }  
+          />
+
+          <Route 
+            path='/contact/:contact_id/detail'
+            element={
+              <ContactDetailContextProvider>
+                <ContactDetailScreen />
+              </ContactDetailContextProvider>
+            }  
+          />
         </Routes>
 
       </div>
