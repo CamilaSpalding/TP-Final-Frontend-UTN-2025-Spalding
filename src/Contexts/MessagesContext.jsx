@@ -6,7 +6,8 @@ export const MessagesContext = createContext(
         messages: [],
         isMessagesLoading: true,
         loadMessages: (contact_id) => {},
-                
+        addNewMessage: (text) => {}
+
     }
 )
 
@@ -30,6 +31,20 @@ const MessagesContextProvider = ({ children }) => {
         const messages = getMessagesByContactId(contact_id)
         setMessages(messages)
     }
+
+    const addNewMessage = (text) => {
+        const newMessage = {
+            id: messages.length + 1, // Rever, buscar una forma de generar IDs que no dependan del orden ni cantidad de mensajes. Que siempre sea único.
+            sender: 'Yo',
+            sent_time: '21:05', // Rever, buscar la forma de que cargue el horario REAL de cuando se envía el mensaje.
+            text: text,
+            status: 'no-recibido'
+        }
+
+        const cloneMessages = [...messages]
+        cloneMessages.push(newMessage)
+        setMessages(cloneMessages)
+    }
     
     return (
         <MessagesContext.Provider
@@ -37,7 +52,8 @@ const MessagesContextProvider = ({ children }) => {
                 {
                     messages: messages,
                     isMessagesLoading: isMessagesLoading,
-                    loadMessages: loadMessages
+                    loadMessages: loadMessages,
+                    addNewMessage: addNewMessage
                 }
             }
         >
