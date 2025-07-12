@@ -1,6 +1,10 @@
 import React, { useContext } from 'react'
 import { MessagesContext } from '../../Contexts/MessagesContext'
 import './Message.css'
+import CheckSent from '../../assets/icons/check-sent.svg'
+import CheckReceived from '../../assets/icons/check-received.svg'
+import CheckSeen from '../../assets/icons/check-seen.svg'
+
 
 // FORMA VISTA EN CLASE
 /* function Message({emisor, hora, id, texto, status}) {
