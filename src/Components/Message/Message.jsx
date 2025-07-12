@@ -4,6 +4,7 @@ import './Message.css'
 import SentCheckIcon from '../../assets/icons/sent-check.svg'
 import ReceivedCheckIcon from '../../assets/icons/received-check.svg'
 import SeenCheckIcon from '../../assets/icons/seen-check.svg'
+import SendingClockIcon from '../../assets/icons/sending-clock.svg'
 
 
 // FORMA VISTA EN CLASE
@@ -57,6 +58,8 @@ function Message ({id, sender, sent_time, text, status}) {
     // Se agrega función para seleccionar el icono según el estado
     const getStatusIcon = (status) => {
         switch (status) {
+            case 'sending':
+                return SendingClockIcon
             case 'sent':
                 return SentCheckIcon
             case 'received':

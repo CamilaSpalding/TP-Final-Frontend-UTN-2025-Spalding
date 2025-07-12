@@ -46,13 +46,50 @@ const MessagesContextProvider = ({ children }) => {
                 hour12: false
             }),
             text: text,
-            status: 'no-recibido'
+            status: 'sending'
         }
 
         const previousMessages = [...messages]
         previousMessages.push(newMessage)
         setMessages(previousMessages)
+
+        // Actualizar a 'sent' después de 1 segundo
+        setTimeout(() => {
+            const updatedMessages = []
+            for (const message of messages) {
+                if (message.id === newMessage.id) {
+                    const updatedMessage = {
+                        ...message,
+                        status: 'sent'
+                    }
+                    updatedMessages.push(updatedMessage)
+                } else {
+                    updatedMessages.push(message)
+                }
+            }
+            setMessages(updatedMessages)
+        },
+        1000 )
+
+        // Actualizar a 'receives' después de 3 segundos
+        setTimeout(() => {
+            const updatedMessages = []
+            for (const message of messages) {
+                if (message.id === newMessage.id) {
+                    const updatedMessage = {
+                        ...message,
+                        status: 'received'
+                    }
+                    updatedMessages.push(updatedMessage)
+                } else {
+                    updatedMessages.push(message)
+                }
+            }
+            setMessages(updatedMessages)
+        },
+        3000 )
     }
+    
 
     const handleDeleteMessage = (message_id) => {
         const updatedMessageList = []
