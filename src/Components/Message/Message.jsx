@@ -6,6 +6,7 @@ import SentCheckIcon from '../../assets/icons/sent-check.svg'
 import ReceivedCheckIcon from '../../assets/icons/received-check.svg'
 import SeenCheckIcon from '../../assets/icons/seen-check.svg'
 import SendingClockIcon from '../../assets/icons/sending-clock.svg'
+import ChevronDownIcon from '../../assets/icons/chevron-down.svg'
 import EditIcon from '../../assets/icons/pencil.svg'
 import DeleteIcon from '../../assets/icons/trash.svg'
 
@@ -125,11 +126,11 @@ function Message ({id, sender, sent_time, text, status}) {
                     <div className="message-options-menu">
                     <button onClick={handleEdit}>
                         <img src={EditIcon} alt="Edit" />
-                        <span>Edit</span>
+                        <span>Editar</span>
                     </button>
                     <button onClick={handleDelete} className="delete-option">
                         <img src={DeleteIcon} alt="Delete" />
-                        <span>Delete</span>
+                        <span>Eliminar</span>
                     </button>
                     </div>
                 )}
