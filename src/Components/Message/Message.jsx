@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import { MessagesContext } from '../../Contexts/MessagesContext'
 import './Message.css'
-import CheckSent from '../../assets/icons/check-sent.svg'
-import CheckReceived from '../../assets/icons/check-received.svg'
-import CheckSeen from '../../assets/icons/check-seen.svg'
+import SentCheckIcon from '../../assets/icons/sent-check.svg'
+import ReceivedCheckIcon from '../../assets/icons/received-check.svg'
+import SeenCheckIcon from '../../assets/icons/seen-check.svg'
 
 
 // FORMA VISTA EN CLASE
@@ -37,6 +37,7 @@ function Message ({id, sender, sent_time, text, status}) {
     const { handleDeleteMessage, handleSoftDeleteMessage } = useContext(MessagesContext)
 
     const myMessage = sender.toLowerCase() === 'yo'
+    
     const messageClass = myMessage
         ? 'chat-dialog my-message'
         : 'chat-dialog their-message'
@@ -53,6 +54,23 @@ function Message ({id, sender, sent_time, text, status}) {
         }
     }
 
+    // Se agrega función para seleccionar el icono según el estado
+    const getStatusIcon = (status) => {
+        switch (status) {
+            case 'sent':
+                return SentCheckIcon
+            case 'received':
+                return ReceivedCheckIcon
+            case 'seen':
+                return SeenCheckIcon
+                default:
+                    return null
+        }
+    }
+
+    const StatusIcon = myMessage ? getStatusIcon(status) : null
+
+
     return (
         <div className={messageClass}>
             <div className="message-content">
@@ -60,10 +78,12 @@ function Message ({id, sender, sent_time, text, status}) {
                     {text}
                     <div className="message-meta">
                         <span className="message-time">{sent_time}</span>
-                        {myMessage && (
-                            <span className="message-status">
-                                {status ? '✔✔' : '✔'}
-                            </span>
+                        {StatusIcon && (
+                            <StatusIcon
+                                className={`status-icon status-${status}`}
+                                title={`Status: ${status}`}
+                                aria-label={`Message status: ${status}`}
+                            />
                         )}
                         <button onClick={handleDelete} className="delete-button">
                             Delete

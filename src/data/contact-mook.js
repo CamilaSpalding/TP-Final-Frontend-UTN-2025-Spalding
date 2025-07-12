@@ -12,7 +12,7 @@ const mook_data = {
             last_message: {
                 id: 1,
                 text:  'hola Francesco',
-                status: 'recibido' // true | false        
+                status: 'received' 
             },
             unread_messages: 0,
             messages: [
@@ -21,14 +21,14 @@ const mook_data = {
                     sender: 'a',
                     sent_time: '00:01',
                     text: 'hola 1',
-                    status: 'recibido' // true | false
+                    status: 'seen' 
                 },
                 {
                     id: 2,
                     sender: 'b',
                     sent_time: '00:02',
                     text: 'hola 2',
-                    status: 'recibido' // true | false
+                    status: 'received'
                 },
             ]
         },
@@ -40,7 +40,7 @@ const mook_data = {
             last_message: {
                 id: 2,
                 text: 'cucaracha rubia',
-                status: 'recibido' // true | false         
+                status: 'sent'     
             },
             unread_messages: 2,
             messages: [
@@ -49,14 +49,14 @@ const mook_data = {
                     sender: 'a',
                     sent_time: '00:01',
                     text: 'mi rubia',
-                    status: 'recibido' // true | false
+                    status: 'received'
                 },
                 {
                     id: 2,
                     sender: 'b',
                     sent_time: '00:02',
                     text: 'cucaracha de dos patas',
-                    status: 'recibido' // true | false
+                    status: 'received'
                 },
             ]
         },

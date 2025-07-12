@@ -29,3 +29,32 @@
     border-right: 10px solid #f1f0f0;
     border-bottom: 10px solid transparent;
 }
+
+
+/* Colores de los iconos de status de los mensajes */
+/* Modo claro (por defecto) */
+.status-icon {
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+.status-sent,
+.status-received {
+    fill: rgba(0, 0, 0, 0.6);
+}
+
+.status-seen {
+    fill: #007BFC;
+}
+
+/* Modo oscuro */
+.dark-mode .status-sent,
+.dark-mode .status-received {
+    fill: #ffffff; /* Este está mal, no es blanco puro, tiene opacidad. Poner la app en modo oscuro e inspeccionar para tomar el color exacto. */
+}
+
+.dark-mode .status-seen {
+    fill: #007BFC; /* Ver si lo cambio o no */
+}
