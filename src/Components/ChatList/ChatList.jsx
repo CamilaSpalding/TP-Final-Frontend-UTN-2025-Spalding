@@ -1,18 +1,30 @@
 import React, { useContext } from 'react'
 import { ContactsContext } from '../../Contexts/ContactsContext'
-import ContactItem from '../ChatItem/ChatItem'
+import ChatItem from '../ChatItem/ChatItem'
 
 function ContactList () {
     
-    const {contacts, isLoadingContacts} = useContext(ContactsContext) 
+    const { contacts, isLoadingContacts } = useContext(ContactsContext) 
+    if (isLoadingContacts) {
+        return (
+            <Loader />
+        )
+    }
 
     return (
         <div>
             {
                 contacts.map(
                     (contact) => {
-                        return <ContactItem 
+                        return <ChatItem 
                             key={contact.id}
+
+                            id={contact.id}
+                            name={contact.name}
+                            last_time_connected={contact.last_time_connected}
+                            profile_pic={contact.profile_pic}
+                            last_message={contact.last_message}
+                            unread_message={contact.unread_message}
                         />
                     }
                 )
