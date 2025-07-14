@@ -5,12 +5,11 @@ import { MessagesContext } from '../../Contexts/MessagesContext'
 function ChatMessages () {
 
     const { messages } = useContext(MessagesContext)
-    if (messages.length === 0){
-        return (
-            <div>
-                <span>No hay mensajes!</span>
-            </div>
-        )
+    if (!messages || messages.length === 0){
+        return null
+        /* (
+            <div>No hay mensajes en esta conversación</div>
+        ) */
     }
 
     return (
