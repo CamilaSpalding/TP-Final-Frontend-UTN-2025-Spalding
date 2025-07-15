@@ -1,6 +1,7 @@
 // Esta página va a ser la ContactScreen
 import React from 'react'
 import ChatList from '../../Components/ChatList/ChatList'
+import './HomeScreen.css'
 
 function HomeScreen () {
     return (
