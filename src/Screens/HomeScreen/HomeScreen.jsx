@@ -25,17 +25,19 @@ function HomeScreen () {
         }
     }
 
-    return (
-
+    return ( 
         /* Código anterior */
-        {/* <div className='home-screen'>
+        /* <div className='home-screen'>
             <Sidebar />
             <ContactsPanel />
             <AppDownloadPanel />
-        </div> */}
+        </div> */
 
         /* Nueva estructura de código con las nuevas adaptaciones (que cada botón del sidebar tenga funcionalidad) */
-
+        <div className='home-screen'>
+            <Sidebar activeSection={activeSection} setActiveSection={setActiveSection} />
+            {renderMainContent()}
+        </div>
     )
 }
 
