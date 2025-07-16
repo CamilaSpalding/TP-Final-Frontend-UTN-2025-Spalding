@@ -2,13 +2,13 @@ import React, { useContext } from 'react'
 import { MessagesContext } from '../../Contexts/MessagesContext'
 import './Message.css'
 // Iconos
-import SentCheckIcon from '../../assets/icons/sent-check.svg'
-import ReceivedCheckIcon from '../../assets/icons/received-check.svg'
-import SeenCheckIcon from '../../assets/icons/seen-check.svg'
-import SendingClockIcon from '../../assets/icons/sending-clock.svg'
-import ChevronDownIcon from '../../assets/icons/chevron-down.svg'
-import EditIcon from '../../assets/icons/pencil.svg'
-import DeleteIcon from '../../assets/icons/trash.svg'
+import { ReactComponent as SentCheckIcon } from '../../assets/icons/sent-check.svg'
+import { ReactComponent as ReceivedCheckIcon } from '../../assets/icons/received-check.svg'
+import { ReactComponent as SeenCheckIcon } from '../../assets/icons/seen-check.svg'
+import { ReactComponent as SendingClockIcon } from '../../assets/icons/sending-clock.svg'
+import { ReactComponent as ChevronDownIcon } from '../../assets/icons/chevron-down.svg'
+import { ReactComponent as EditIcon } from '../../assets/icons/pencil.svg'
+import { ReactComponent as DeleteIcon } from '../../assets/icons/trash.svg'
 
 
 // FORMA VISTA EN CLASE

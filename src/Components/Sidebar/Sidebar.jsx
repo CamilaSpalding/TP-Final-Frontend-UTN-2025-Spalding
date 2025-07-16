@@ -2,18 +2,18 @@ import React, { useState } from 'react'
 import './Sidebar.css'
 
 /* Iconos en línea */
-import ChatsLineIcon from '../../assets/icons/chats-line.svg'
-import StatusLineIcon from '../../assets/icons/status-line.svg'
-import ChannelsLineIcon from '../../assets/icons/channels-line.svg'
-import CommunitiesLineIcon from '../../assets/icons/communities-line.svg'
-import SettingsLineIcon from '../../assets/icons/settings-line.svg'
+import { ReactComponent as ChatsLineIcon } from '../../assets/icons/chats-line.svg'
+import { ReactComponent as StatusLineIcon } from '../../assets/icons/status-line.svg'
+import { ReactComponent as ChannelsLineIcon } from '../../assets/icons/channels-line.svg'
+import { ReactComponent as CommunitiesLineIcon } from '../../assets/icons/communities-line.svg'
+import { ReactComponent as SettingsLineIcon } from '../../assets/icons/settings-line.svg'
 
 /* Iconos sólidos */
-import ChatsSolidIcon from '../../assets/icons/chats-solid.svg'
-import StatusSolidIcon from '../../assets/icons/status-solid.svg'
-import ChannelsSolidIcon from '../../assets/icons/channels-solid.svg'
-import CommunitiesSolidIcon from '../../assets/icons/communities-solid.svg'
-import SettingsSolidIcon from '../../assets/icons/settings-solid.svg'
+import { ReactComponent as ChatsSolidIcon } from '../../assets/icons/chats-solid.svg'
+import { ReactComponent as StatusSolidIcon } from '../../assets/icons/status-solid.svg'
+import { ReactComponent as ChannelsSolidIcon } from '../../assets/icons/channels-solid.svg'
+import { ReactComponent as CommunitiesSolidIcon } from '../../assets/icons/communities-solid.svg'
+import { ReactComponent as SettingsSolidIcon } from '../../assets/icons/settings-solid.svg'
 
 function Sidebar() {
 
