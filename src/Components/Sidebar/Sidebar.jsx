@@ -35,7 +35,7 @@ function Sidebar() {
                         className='sidebar__button'
                         aria-label='Chats'
                         onMouseEnter={() => setHovered(previousState => ({ ...previousState, chats: true }))}
-                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, chats: true }))}
+                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, chats: false }))}
                     >
                         { hovered.chats 
                             ? (<ChatsSolidIcon className="sidebar__btn-icon"/>) 
@@ -47,7 +47,7 @@ function Sidebar() {
                         className='sidebar__button'
                         aria-label='Estados'
                         onMouseEnter={() => setHovered(previousState => ({ ...previousState, status: true }))}
-                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, status: true }))}
+                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, status: false }))}
                     >
                         { hovered.status
                             ? (<StatusSolidIcon className="sidebar__btn-icon"/>) 
@@ -59,7 +59,7 @@ function Sidebar() {
                         className='sidebar__button' 
                         aria-label='Canales'
                         onMouseEnter={() => setHovered(previousState => ({ ...previousState, channels: true }))}
-                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, channels: true }))}
+                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, channels: false }))}
                     >
                         { hovered.channels
                             ? (<ChannelsSolidIcon className="sidebar__btn-icon"/>) 
@@ -71,7 +71,7 @@ function Sidebar() {
                         className='sidebar__button' 
                         aria-label='Comunidades'
                         onMouseEnter={() => setHovered(previousState => ({ ...previousState, communities: true }))}
-                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, communities: true }))}
+                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, communities: false }))}
                     >
                         { hovered.communities
                             ? (<CommunitiesSolidIcon className="sidebar__btn-icon large-icon"/>) 
@@ -85,7 +85,7 @@ function Sidebar() {
                         className='sidebar__button' 
                         aria-label='Ajustes'
                         onMouseEnter={() => setHovered(previousState => ({ ...previousState, settings: true }))}
-                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, settings: true }))}
+                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, settings: false }))}
                     >
                         { hovered.settings
                             ? (<SettingsSolidIcon className="sidebar__btn-icon"/>) 
