@@ -17,13 +17,7 @@ import SettingsSolidIcon from '../../assets/icons/settings-solid.svg?react'
 
 function Sidebar() {
 
-    const [ hovered, setHovered ] = useState({
-        chats: false,
-        status: false,
-        channels: false,
-        communities: false,
-        settings: false
-    })
+    const [activeButton, setActiveButton] = useState('chats')
 
     // Este código aún se puede componetizar más? Puedo ver de hacer que los botones sean un componente en sí para no repetir tanto código.
 
@@ -34,10 +28,9 @@ function Sidebar() {
                     <button
                         className='sidebar__button sidebar__small-icon-btn'
                         aria-label='Chats'
-                        onMouseEnter={() => setHovered(previousState => ({ ...previousState, chats: true }))}
-                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, chats: false }))}
+                        onClick={() => setActiveButton('chats')}
                     >
-                        { hovered.chats 
+                        { activeButton === 'chats'
                             ? (<ChatsSolidIcon className="sidebar__btn-icon sidebar__small-icon"/>) 
                             : (<ChatsLineIcon className="sidebar__btn-icon sidebar__small-icon"/>)
                         }
@@ -46,10 +39,9 @@ function Sidebar() {
                     <button 
                         className='sidebar__button sidebar__small-icon-btn'
                         aria-label='Estados'
-                        onMouseEnter={() => setHovered(previousState => ({ ...previousState, status: true }))}
-                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, status: false }))}
+                        onClick={() => setActiveButton('status')}
                     >
-                        { hovered.status
+                        { activeButton === 'status'
                             ? (<StatusSolidIcon className="sidebar__btn-icon sidebar__small-icon"/>) 
                             : (<StatusLineIcon className="sidebar__btn-icon sidebar__small-icon"/>)
                         }
@@ -58,10 +50,9 @@ function Sidebar() {
                     <button 
                         className='sidebar__button sidebar__small-icon-btn' 
                         aria-label='Canales'
-                        onMouseEnter={() => setHovered(previousState => ({ ...previousState, channels: true }))}
-                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, channels: false }))}
+                        onClick={() => setActiveButton('channels')}
                     >
-                        { hovered.channels
+                        { activeButton === 'channels'
                             ? (<ChannelsSolidIcon className="sidebar__btn-icon sidebar__small-icon"/>) 
                             : (<ChannelsLineIcon className="sidebar__btn-icon sidebar__small-icon"/>)
                         }
@@ -70,10 +61,9 @@ function Sidebar() {
                     <button 
                         className='sidebar__button sidebar__large-icon-btn' 
                         aria-label='Comunidades'
-                        onMouseEnter={() => setHovered(previousState => ({ ...previousState, communities: true }))}
-                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, communities: false }))}
+                        onClick={() => setActiveButton('communities')}
                     >
-                        { hovered.communities
+                        { activeButton === 'communities'
                             ? (<CommunitiesSolidIcon className="sidebar__btn-icon sidebar__large-icon"/>) 
                             : (<CommunitiesLineIcon className="sidebar__btn-icon sidebar__large-icon"/>)
                         }
@@ -84,10 +74,9 @@ function Sidebar() {
                     <button 
                         className='sidebar__button' 
                         aria-label='Ajustes'
-                        onMouseEnter={() => setHovered(previousState => ({ ...previousState, settings: true }))}
-                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, settings: false }))}
+                        onClick={() => setActiveButton('settings')}
                     >
-                        { hovered.settings
+                        { activeButton === 'settings'
                             ? (<SettingsSolidIcon className="sidebar__btn-icon sidebar__small-icon"/>) 
                             : (<SettingsLineIcon className="sidebar__btn-icon sidebar__small-icon"/>)
                         }
