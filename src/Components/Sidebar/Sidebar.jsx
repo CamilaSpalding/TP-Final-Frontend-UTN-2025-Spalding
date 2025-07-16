@@ -3,9 +3,17 @@ import './Sidebar.css'
 
 /* Iconos en línea */
 import ChatsLineIcon from '../../assets/icons/chats-line.svg'
+import StatusLineIcon from '../../assets/icons/status-line.svg'
+import ChannelsLineIcon from '../../assets/icons/channels-line.svg'
+import CommunitiesLineIcon from '../../assets/icons/communities-line.svg'
+import SettingsLineIcon from '../../assets/icons/settings-line.svg'
 
 /* Iconos sólidos */
 import ChatsSolidIcon from '../../assets/icons/chats-solid.svg'
+import StatusSolidIcon from '../../assets/icons/status-solid.svg'
+import ChannelsSolidIcon from '../../assets/icons/channels-solid.svg'
+import CommunitiesSolidIcon from '../../assets/icons/communities-solid.svg'
+import SettingsSolidIcon from '../../assets/icons/settings-solid.svg'
 
 function Sidebar() {
 
