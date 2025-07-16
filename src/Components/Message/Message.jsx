@@ -1,14 +1,15 @@
 import React, { useContext } from 'react'
 import { MessagesContext } from '../../Contexts/MessagesContext'
 import './Message.css'
+
 // Iconos
-import { ReactComponent as SentCheckIcon } from '../../assets/icons/sent-check.svg'
-import { ReactComponent as ReceivedCheckIcon } from '../../assets/icons/received-check.svg'
-import { ReactComponent as SeenCheckIcon } from '../../assets/icons/seen-check.svg'
-import { ReactComponent as SendingClockIcon } from '../../assets/icons/sending-clock.svg'
-import { ReactComponent as ChevronDownIcon } from '../../assets/icons/chevron-down.svg'
-import { ReactComponent as EditIcon } from '../../assets/icons/pencil.svg'
-import { ReactComponent as DeleteIcon } from '../../assets/icons/trash.svg'
+import SentCheckIcon from '../../assets/icons/sent-check.svg?react'
+import ReceivedCheckIcon from '../../assets/icons/received-check.svg?react'
+import SeenCheckIcon from '../../assets/icons/seen-check.svg?react'
+import SendingClockIcon from '../../assets/icons/sending-clock.svg?react'
+import ChevronDownIcon from '../../assets/icons/chevron-down.svg?react'
+import EditIcon from '../../assets/icons/pencil.svg?react'
+import DeleteIcon from '../../assets/icons/trash.svg?react'
 
 
 // FORMA VISTA EN CLASE
