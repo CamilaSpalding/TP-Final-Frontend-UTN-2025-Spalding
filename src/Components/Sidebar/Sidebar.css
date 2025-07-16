@@ -6,7 +6,11 @@
 
 .sidebar__nav {}
 
-.sidebar__main-actions {}
+.sidebar__main-actions,
+.sidebar__user-actions {
+    display: flex;
+    flex-direction: column;
+}
 
 .sidebar__user-actions {}
 
