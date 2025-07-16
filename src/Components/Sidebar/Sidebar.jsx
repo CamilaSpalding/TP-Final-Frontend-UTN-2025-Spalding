@@ -74,8 +74,8 @@ function Sidebar() {
                         onMouseLeave={() => setHovered(previousState => ({ ...previousState, communities: true }))}
                     >
                         { hovered.communities
-                            ? (<CommunitiesSolidIcon className="sidebar__btn-icon"/>) 
-                            : (<CommunitiesLineIcon className="sidebar__btn-icon"/>)
+                            ? (<CommunitiesSolidIcon className="sidebar__btn-icon large-icon"/>) 
+                            : (<CommunitiesLineIcon className="sidebar__btn-icon large-icon"/>)
                         }
                     </button>
                 </div>
@@ -96,7 +96,6 @@ function Sidebar() {
                     <button className='sidebar__button sidebar__profile-btn' aria-label='Perfil'>
                         <img src="/src/assets/images/user-profile.jpg" alt="User profile" className='sidebar__profile-image' />
                     </button>
-
                 </div>
 
             </nav>
