@@ -21,7 +21,7 @@ const ContactsContextProvider = ({ children }) => {
     )
 
     return (
-        <ContactsContaxt.Provider
+        <ContactsContext.Provider
             value={
                 {
                     contacts: contacts,
@@ -30,7 +30,7 @@ const ContactsContextProvider = ({ children }) => {
             }
         >
             {children}
-        </ContactsContaxt.Provider>
+        </ContactsContext.Provider>
     )
 }
 
