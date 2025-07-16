@@ -15,12 +15,9 @@ import ChannelsSolidIcon from '../../assets/icons/channels-solid.svg?react'
 import CommunitiesSolidIcon from '../../assets/icons/communities-solid.svg?react'
 import SettingsSolidIcon from '../../assets/icons/settings-solid.svg?react'
 
-function Sidebar() {
-
-    const [activeButton, setActiveButton] = useState('chats')
+function Sidebar({ activeSection, setActiveSection }) {
 
     // Este código aún se puede componetizar más? Puedo ver de hacer que los botones sean un componente en sí para no repetir tanto código.
-
     return (
         <aside className='sidebar'>
             <nav className='sidebar__nav'>
@@ -28,9 +25,9 @@ function Sidebar() {
                     <button
                         className='sidebar__button sidebar__small-icon-btn'
                         aria-label='Chats'
-                        onClick={() => setActiveButton('chats')}
+                        onClick={() => setActiveSection('chats')}
                     >
-                        { activeButton === 'chats'
+                        { activeSection === 'chats'
                             ? (<ChatsSolidIcon className="sidebar__btn-icon sidebar__small-icon"/>) 
                             : (<ChatsLineIcon className="sidebar__btn-icon sidebar__small-icon"/>)
                         }
@@ -39,9 +36,9 @@ function Sidebar() {
                     <button 
                         className='sidebar__button sidebar__small-icon-btn'
                         aria-label='Estados'
-                        onClick={() => setActiveButton('status')}
+                        onClick={() => setActiveSection('status')}
                     >
-                        { activeButton === 'status'
+                        { activeSection === 'status'
                             ? (<StatusSolidIcon className="sidebar__btn-icon sidebar__small-icon"/>) 
                             : (<StatusLineIcon className="sidebar__btn-icon sidebar__small-icon"/>)
                         }
@@ -50,9 +47,9 @@ function Sidebar() {
                     <button 
                         className='sidebar__button sidebar__small-icon-btn' 
                         aria-label='Canales'
-                        onClick={() => setActiveButton('channels')}
+                        onClick={() => setActiveSection('channels')}
                     >
-                        { activeButton === 'channels'
+                        { activeSection === 'channels'
                             ? (<ChannelsSolidIcon className="sidebar__btn-icon sidebar__small-icon"/>) 
                             : (<ChannelsLineIcon className="sidebar__btn-icon sidebar__small-icon"/>)
                         }
@@ -61,9 +58,9 @@ function Sidebar() {
                     <button 
                         className='sidebar__button sidebar__large-icon-btn' 
                         aria-label='Comunidades'
-                        onClick={() => setActiveButton('communities')}
+                        onClick={() => setActiveSection('communities')}
                     >
-                        { activeButton === 'communities'
+                        { activeSection === 'communities'
                             ? (<CommunitiesSolidIcon className="sidebar__btn-icon sidebar__large-icon"/>) 
                             : (<CommunitiesLineIcon className="sidebar__btn-icon sidebar__large-icon"/>)
                         }
@@ -74,15 +71,19 @@ function Sidebar() {
                     <button 
                         className='sidebar__button' 
                         aria-label='Ajustes'
-                        onClick={() => setActiveButton('settings')}
+                        onClick={() => setActiveSection('settings')}
                     >
-                        { activeButton === 'settings'
+                        { activeSection === 'settings'
                             ? (<SettingsSolidIcon className="sidebar__btn-icon sidebar__small-icon"/>) 
                             : (<SettingsLineIcon className="sidebar__btn-icon sidebar__small-icon"/>)
                         }
                     </button>
 
-                    <button className='sidebar__button sidebar__profile-btn' aria-label='Perfil'>
+                    <button 
+                        className='sidebar__button sidebar__profile-btn'
+                        aria-label='Perfil'
+                        onClick={() => setActiveSection('perfil')}
+                    >
                         <img src="/src/assets/images/user-profile.jpg" alt="User profile" className='sidebar__profile-image' />
                     </button>
                 </div>
