@@ -18,49 +18,58 @@
 .sidebar__user-actions {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    
 }
 
 .sidebar__button {
     width: 40px;
     height: 40px;
+    margin: 2xpx 0px;
     background: transparent;
     border: none;
-    cursor: pointer;
-    padding: 8px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background 0.2s ease;
-    border-radius: 8px;
+    cursor: pointer;
 }
 
 .sidebar__button:hover {
-    background-color: rgba(0, 0, 0, 0.05); /* o el color que prefieras para hover */
+    background-color: rgba(0, 0, 0, 0.06);
 }
 
+.sidebar__small-icon-btn {
+    padding: 8px;
+}
+
+.sidebar__large-icon-btn {
+    padding: 4px;
+}
+
+.sidebar__profile-btn {
+    padding: 6px;
+}
+
+
 /* Iconos */
-.sidebar__icon {
-    width: 24px;
-    height: 24px;
+.sidebar__btn-icon {
     fill: currentColor;
     color: rgba(0, 0, 0, 0.6);
 }
 
-.sidebar__button:hover .sidebar__icon {
-    color: #000; /* Podés usar otro color o cambiar el icono via JS si querés usar los .svg planos */
+.sidebar__small-icon {
+    width: 24px;
+    height: 24px;
 }
 
-/* Icono especial de Comunidades */
-.large-icon {
+.sidebar__large-icon {
     width: 32px;
     height: 32px;
-    padding: 4px;
 }
 
-/* Perfil */
-.sidebar__profile-btn {
-    padding: 6px;
+.sidebar__button:hover .sidebar__btn-icon {
+    color: #000; /* Podés usar otro color o cambiar el icono via JS si querés usar los .svg planos */
 }
 
 .sidebar__profile-image {
