@@ -10,13 +10,20 @@
 .sidebar__user-actions {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .sidebar__user-actions {}
 
-.sidebar__button {}
+.sidebar__button {
+    padding: 8px;
+}
 
-.sidebar__btn-icon {}
+.sidebar__btn-icon {
+    width: 24px;
+    height: 24px;
+}
 
 .large-icon {}
 
