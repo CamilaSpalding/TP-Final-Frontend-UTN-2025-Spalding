@@ -29,12 +29,28 @@ function Sidebar() {
         <aside className='sidebar'>
             <nav className='sidebar__nav'>
                 <div className='sidebar__main-actions'>
-                    <button className='sidebar__button' aria-label='Chats' onMouseEnter={() => setHovered(true)} onMouseLeave={() => setIsHoveredChats(false)}>
-                        {hovered.chats ? <ChatsSolidIcon className="sidebar__btn-icon"/> : <ChatsLineIcon className="sidebar__btn-icon"/>}
+                    <button
+                        className='sidebar__button'
+                        aria-label='Chats'
+                        onMouseEnter={() => setHovered(previousState => ({ ...previousState, chats: true }))}
+                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, chats: true }))}
+                    >
+                        { hovered.chats 
+                            ? (<ChatsSolidIcon className="sidebar__btn-icon"/>) 
+                            : (<ChatsLineIcon className="sidebar__btn-icon"/>)
+                        }
                     </button>
 
-                    <button className='sidebar__button' aria-label='Estados'>
-                        {/* icono de Estados */}
+                    <button 
+                        className='sidebar__button'
+                        aria-label='Estados'
+                        onMouseEnter={() => setHovered(previousState => ({ ...previousState, status: true }))}
+                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, status: true }))}
+                    >
+                        { hovered.status
+                            ? (<StatusSolidIcon className="sidebar__btn-icon"/>) 
+                            : (<StatusLineIcon className="sidebar__btn-icon"/>)
+                        }
                     </button>
 
                     <button className='sidebar__button' aria-label='Canales'>
