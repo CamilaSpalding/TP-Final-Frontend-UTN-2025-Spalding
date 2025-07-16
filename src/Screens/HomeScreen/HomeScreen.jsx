@@ -1,12 +1,16 @@
 // Esta página va a ser la ContactScreen
 import React from 'react'
-import ChatList from '../../Components/ChatsList/ChatsList'
+import Sidebar from '../../Components/Sidebar/Sidebar'
+import ContactsPanel from '../../Components/ContactsPanel/ContactsPanel'
+import AppDownloadPanel from '../../Components/AppDownloadPanel/AppDownloadPanel'
 import './HomeScreen.css'
 
 function HomeScreen () {
     return (
-        <div>
-            <ChatList /> {/* Anteriormente llamado ContactList */}
+        <div className='home-screen'>
+            <Sidebar />
+            <ContactsPanel />
+            <AppDownloadPanel />
         </div>
     )
 }
