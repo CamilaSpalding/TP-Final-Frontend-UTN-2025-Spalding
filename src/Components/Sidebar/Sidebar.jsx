@@ -23,7 +23,7 @@ function Sidebar({ activeSection, setActiveSection }) {
             <nav className='sidebar__nav'>
                 <div className='sidebar__main-actions'>
                     <button
-                        className='sidebar__button sidebar__small-icon-btn'
+                        className={`sidebar__button sidebar__small-icon-btn ${activeSection === 'chats' ? 'sidebar__button--active' : ''}`}
                         aria-label='Chats'
                         onClick={() => setActiveSection('chats')}
                     >
@@ -34,7 +34,7 @@ function Sidebar({ activeSection, setActiveSection }) {
                     </button>
 
                     <button 
-                        className='sidebar__button sidebar__small-icon-btn'
+                        className={`sidebar__button sidebar__small-icon-btn ${activeSection === 'status' ? 'sidebar__button--active' : ''}`}
                         aria-label='Estados'
                         onClick={() => setActiveSection('status')}
                     >
@@ -45,7 +45,7 @@ function Sidebar({ activeSection, setActiveSection }) {
                     </button>
 
                     <button 
-                        className='sidebar__button sidebar__small-icon-btn' 
+                        className={`sidebar__button sidebar__small-icon-btn ${activeSection === 'channels' ? 'sidebar__button--active' : ''}`}
                         aria-label='Canales'
                         onClick={() => setActiveSection('channels')}
                     >
@@ -56,7 +56,7 @@ function Sidebar({ activeSection, setActiveSection }) {
                     </button>
 
                     <button 
-                        className='sidebar__button sidebar__large-icon-btn' 
+                        className={`sidebar__button sidebar__large-icon-btn ${activeSection === 'communities' ? 'sidebar__button--active' : ''}`}
                         aria-label='Comunidades'
                         onClick={() => setActiveSection('communities')}
                     >
@@ -67,9 +67,9 @@ function Sidebar({ activeSection, setActiveSection }) {
                     </button>
                 </div>
 
-                <div className='sidebar__user-actions sidebar__small-icon-btn'>
+                <div className='sidebar__user-actions'>
                     <button 
-                        className='sidebar__button' 
+                        className={`sidebar__button sidebar__small-icon-btn ${activeSection === 'settings' ? 'sidebar__button--active' : ''}`}
                         aria-label='Ajustes'
                         onClick={() => setActiveSection('settings')}
                     >
@@ -80,9 +80,9 @@ function Sidebar({ activeSection, setActiveSection }) {
                     </button>
 
                     <button 
-                        className='sidebar__button sidebar__profile-btn'
+                        className={`sidebar__button sidebar__profile-btn ${activeSection === 'profile' ? 'sidebar__button--active' : ''}`}
                         aria-label='Perfil'
-                        onClick={() => setActiveSection('perfil')}
+                        onClick={() => setActiveSection('profile')}
                     >
                         <img src="/src/assets/images/user-profile.jpg" alt="User profile" className='sidebar__profile-image' />
                     </button>

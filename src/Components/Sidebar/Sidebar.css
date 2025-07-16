@@ -1,5 +1,5 @@
 .sidebar {
-    width: 64px;
+    /* width: 64px; */
     height: 100vh; /* height: 100%; */
     padding: 10px 12px;
     background-color: #F7F5F3;
@@ -24,19 +24,25 @@
 .sidebar__button {
     width: 40px;
     height: 40px;
-    margin: 2xpx 0px;
+    margin: 2px 0px;
     background: transparent;
     border: none;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s ease;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .sidebar__button:hover {
     background-color: rgba(0, 0, 0, 0.06);
+}
+
+.sidebar__button--active {
+    background-color: rgba(0, 0, 0, 0.08);
+    color: var(--WA-color-neutral-black);
+    /* border-radius: 50%; */
 }
 
 .sidebar__small-icon-btn {
@@ -54,8 +60,11 @@
 
 /* Iconos */
 .sidebar__btn-icon {
-    fill: currentColor;
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--WA-color-black-60);
+}
+
+.sidebar__button--active .sidebar__btn-icon {
+    color: var(--WA-color-neutral-black);
 }
 
 .sidebar__small-icon {
@@ -68,9 +77,9 @@
     height: 32px;
 }
 
-.sidebar__button:hover .sidebar__btn-icon {
-    color: #000; /* Podés usar otro color o cambiar el icono via JS si querés usar los .svg planos */
-}
+/* .sidebar__button:hover .sidebar__btn-icon {
+    color: #000;
+} */
 
 .sidebar__profile-image {
     width: 28px;
