@@ -33,7 +33,7 @@
     
 }
 
-/* Tipografías de WhatsApp */
+/* Importación de tipografías de WhatsApp */
 @font-face {
     font-family: 'SF Pro Text';
     src: url('../assets/fonts/SF-Pro-Text-Light.otf') format('opentype');
