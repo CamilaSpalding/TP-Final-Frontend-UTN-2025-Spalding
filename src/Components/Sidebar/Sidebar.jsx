@@ -25,6 +25,8 @@ function Sidebar() {
         settings: false
     })
 
+    // Este código aún se puede componetizar más? Puedo ver de hacer que los botones sean un componente en sí para no repetir tanto código.
+
     return (
         <aside className='sidebar'>
             <nav className='sidebar__nav'>
@@ -53,18 +55,42 @@ function Sidebar() {
                         }
                     </button>
 
-                    <button className='sidebar__button' aria-label='Canales'>
-                        {/* icono de Canales */}
+                    <button 
+                        className='sidebar__button' 
+                        aria-label='Canales'
+                        onMouseEnter={() => setHovered(previousState => ({ ...previousState, channels: true }))}
+                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, channels: true }))}
+                    >
+                        { hovered.channels
+                            ? (<ChannelsSolidIcon className="sidebar__btn-icon"/>) 
+                            : (<ChannelsLineIcon className="sidebar__btn-icon"/>)
+                        }
                     </button>
 
-                    <button className='sidebar__button' aria-label='Comunidades'>
-                        {/* icono de Comunidades */}
+                    <button 
+                        className='sidebar__button' 
+                        aria-label='Comunidades'
+                        onMouseEnter={() => setHovered(previousState => ({ ...previousState, communities: true }))}
+                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, communities: true }))}
+                    >
+                        { hovered.communities
+                            ? (<CommunitiesSolidIcon className="sidebar__btn-icon"/>) 
+                            : (<CommunitiesLineIcon className="sidebar__btn-icon"/>)
+                        }
                     </button>
                 </div>
 
                 <div className='sidebar__user-actions'>
-                    <button className='sidebar__button' aria-label='Ajustes'>
-                        {/* icono de Ajustes */}
+                    <button 
+                        className='sidebar__button' 
+                        aria-label='Ajustes'
+                        onMouseEnter={() => setHovered(previousState => ({ ...previousState, settings: true }))}
+                        onMouseLeave={() => setHovered(previousState => ({ ...previousState, settings: true }))}
+                    >
+                        { hovered.settings
+                            ? (<SettingsSolidIcon className="sidebar__btn-icon"/>) 
+                            : (<SettingsLineIcon className="sidebar__btn-icon"/>)
+                        }
                     </button>
 
                     <button className='sidebar__button sidebar__profile-btn' aria-label='Perfil'>
