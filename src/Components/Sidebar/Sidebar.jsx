@@ -84,7 +84,7 @@ function Sidebar({ activeSection, setActiveSection }) {
                         aria-label='Perfil'
                         onClick={() => setActiveSection('profile')}
                     >
-                        <img src="/src/assets/images/user-profile.jpg" alt="User profile" className='sidebar__profile-image' />
+                        <img src="../../assets/images/user-profile-pic.jpg" alt="User profile" className='sidebar__profile-image' />
                     </button>
                 </div>
 
