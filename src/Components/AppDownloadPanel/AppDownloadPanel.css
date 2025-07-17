@@ -28,6 +28,7 @@
 .app-download__title {
     margin-top: 38px;
     font-size: 36px;
+    line-height: 36px;
     font-weight: var(--WA-font-weight-light);
 }
 
