@@ -41,7 +41,19 @@
     color: var(--WA-color-black-60);
 }
 
-.app-download__button {}
+.app-download__button {
+    margin-top: 32px;
+    padding: 10px 24px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: var(--WA-color-green);
+    border: none;
+    border-radius: 50%;
+}
+
+.app-download__button:hover {
+    background-color: var(--WA-color-green-80);
+}
 
 .app-download__footer {}
 
