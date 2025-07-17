@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { ContactsContext } from '../../Contexts/ContactsContext'
 import ChatItem from '../ChatItem/ChatItem'
+import Loader from '../Loader/Loader'
 
 function ContactList () {
     
