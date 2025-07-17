@@ -15,7 +15,7 @@ function AppDownloadPanel() {
 
                 <h1 className='app-download__title'>Descarga WhatsApp para Mac</h1>
 
-                <p className='app-downloadd__text'>Descarga la aplicación para Mac y haz llamadas con mayor rapidez.</p>
+                <p className='app-download__text'>Descarga la aplicación para Mac y haz llamadas con mayor rapidez.</p>
 
                 <button className='app-download__button'>Descargar de App Store</button>
             </div>
