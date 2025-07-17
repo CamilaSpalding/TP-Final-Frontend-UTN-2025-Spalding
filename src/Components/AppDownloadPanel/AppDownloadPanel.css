@@ -30,9 +30,15 @@
     font-size: 36px;
     line-height: 36px;
     font-weight: var(--WA-font-weight-light);
+    color: var(--WA-color-black);
 }
 
-.app-download__text {}
+.app-download__text {
+    margin-top: 24px;
+    font-size: 14px;
+    font-weight: var(--WA-font-weight-regular);
+    color: var(--WA-color-black-60);
+}
 
 .app-download__button {}
 
