@@ -14,7 +14,7 @@ function ChatsList () {
 
     return (
         <div>
-            {
+            {/* {
                 contacts.map(
                     (contact) => {
                         return <ChatItem 
@@ -29,7 +29,7 @@ function ChatsList () {
                         />
                     }
                 )
-            }
+            } */}
         </div>
     )
 }
