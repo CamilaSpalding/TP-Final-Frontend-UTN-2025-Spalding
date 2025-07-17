@@ -25,7 +25,11 @@
     height: auto;
 }
 
-.app-download__title {}
+.app-download__title {
+    margin-top: 38px;
+    font-size: 36px;
+    font-weight: var(--WA-font-weight-light);
+}
 
 .app-download__text {}
 
