@@ -3,7 +3,7 @@ import { ContactsContext } from '../../Contexts/ContactsContext'
 import ChatItem from '../ChatItem/ChatItem'
 import Loader from '../Loader/Loader'
 
-function ContactList () {
+function ChatsList () {
     
     const { contacts, isLoadingContacts } = useContext(ContactsContext) 
     if (isLoadingContacts) {
@@ -34,4 +34,4 @@ function ContactList () {
     )
 }
 
-export default ContactList
+export default ChatsList
