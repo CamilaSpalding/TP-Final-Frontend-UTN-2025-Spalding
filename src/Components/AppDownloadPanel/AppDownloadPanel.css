@@ -39,6 +39,7 @@
     line-height: 1.4;
     font-weight: var(--WA-font-weight-regular);
     color: var(--WA-color-black-60);
+    text-align: center;
 }
 
 .app-download__button {
@@ -59,22 +60,23 @@
 }
 
 .app-download__footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
     padding-top: 20px;
+}
+
+.app-download__icon-container {
+    display: inline-block;
+    margin-bottom: 2px;
+    vertical-align: middle;
 }
 
 .app-download__icon {
     width: 20px;
     height: 20px;
-    margin-bottom: 2px;
     color: var(--WA-color-black-60);
 }
 
 @media (max-width: 520px) {
-    .app-download {
+    .app-download-panel {
         display: none;
     }
 }

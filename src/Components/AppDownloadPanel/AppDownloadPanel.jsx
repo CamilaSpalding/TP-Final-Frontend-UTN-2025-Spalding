@@ -21,9 +21,10 @@ function AppDownloadPanel() {
             </div>
 
             <footer className='app-download__footer'>
-                <LockIcon className='app-download__icon' />
-
-                <p className='app-download__text'>Tus mensajes personales están cifrados de extremo a extremo.</p>
+                <p className='app-download__text'>
+                    <span className='app-download__icon-container'>
+                        <LockIcon className='app-download__icon' />
+                    </span> Tus mensajes personales están cifrados de extremo a extremo.</p>
             </footer>
         </section>
     )
