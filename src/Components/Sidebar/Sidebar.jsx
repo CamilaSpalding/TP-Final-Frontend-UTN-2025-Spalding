@@ -15,6 +15,9 @@ import ChannelsSolidIcon from '../../assets/icons/channels-solid.svg?react'
 import CommunitiesSolidIcon from '../../assets/icons/communities-solid.svg?react'
 import SettingsSolidIcon from '../../assets/icons/settings-solid.svg?react'
 
+/* Imagen perfil */
+import userProfilePic from '../../assets/images/user-profile-pic.jpg'
+
 function Sidebar({ activeSection, setActiveSection }) {
 
     // Este código aún se puede componetizar más? Puedo ver de hacer que los botones sean un componente en sí para no repetir tanto código.
@@ -84,7 +87,7 @@ function Sidebar({ activeSection, setActiveSection }) {
                         aria-label='Perfil'
                         onClick={() => setActiveSection('profile')}
                     >
-                        <img src="../../assets/images/user-profile-pic.jpg" alt="User profile" className='sidebar__profile-image' />
+                        <img src={userProfilePic} alt="User profile" className='sidebar__profile-image' />
                     </button>
                 </div>
 
