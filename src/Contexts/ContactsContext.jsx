@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react'
-import { getContactList } from '../services/contactService'
+import { getContactsList } from '../services/contactService'
 
 export const ContactsContext = createContext({
     contacts: [],
