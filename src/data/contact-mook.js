@@ -3,7 +3,7 @@
 // Este archivo solo contiene los datos de los contactos, simula ser un servidor.
 
 const mook_data = {
-    constacts: [
+    contacts: [
         {
             id: 1,
             name: 'cami',
