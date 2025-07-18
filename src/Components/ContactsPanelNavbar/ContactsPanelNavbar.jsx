@@ -2,11 +2,11 @@ import React from 'react'
 import './ContactsPanelNavbar.css'
 
 /* Logo */
-import WhatsappLogo from '../../assets/logo/whatsapp-wordmark.svg'
+import WhatsappLogo from '../../assets/logo/whatsapp-wordmark.svg?react'
 
 /* Iconos */
-import NewChatIcon from '../../assets/icons/new-chat.svg'
-import HamburgerMenuIcon from '../../assets/icons/hamburger-menu.svg'
+import NewChatIcon from '../../assets/icons/new-chat.svg?react'
+import HamburgerMenuIcon from '../../assets/icons/hamburger-menu.svg?react'
 
 function ContactsPanelNavbar() {
     return (
