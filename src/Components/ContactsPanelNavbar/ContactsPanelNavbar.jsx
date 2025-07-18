@@ -12,7 +12,7 @@ function ContactsPanelNavbar() {
     return (
         <header className='contacts-panel-navbar'>
             <div className='contacts-panel-navbar__logo-container'>
-                <WhatsappLogo className='contacts-panel-navbar__wa-logo' />
+                <h1><WhatsappLogo className='contacts-panel-navbar__wa-logo' /></h1>
             </div>
 
             <nav className='contacts-panel-navbar__nav'>

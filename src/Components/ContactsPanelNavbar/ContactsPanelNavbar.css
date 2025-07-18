@@ -5,6 +5,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--WA-color-white);
 }
 
 .contacts-panel-navbar__logo-container {
@@ -13,7 +14,9 @@
     align-items: center;
 }
 
-.contacts-panel-navbar__wa-logo {}
+.contacts-panel-navbar__wa-logo {
+    color: var(--WA-color-green);
+}
 
 .contacts-panel-navbar__nav {
     display: flex;
