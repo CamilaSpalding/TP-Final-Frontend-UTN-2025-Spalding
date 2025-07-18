@@ -14,6 +14,12 @@
     align-items: center;
 }
 
+.contacts-panel-navbar__logo-container h1 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
 .contacts-panel-navbar__wa-logo {
     color: var(--WA-color-green);
 }
