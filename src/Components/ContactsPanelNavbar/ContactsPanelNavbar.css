@@ -30,7 +30,27 @@
     gap: 10px;
 }
 
-.contacts-panel-navbar__button {}
+.contacts-panel-navbar__button {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
 
-.contacts-panel-navbar__icon {}
+.contacts-panel-navbar__button:hover {
+    background-color: var();
+}
+
+.contacts-panel-navbar__icon {
+    width: 24px;
+    height: 24px;
+    color: var(--WA-color-black);
+}
 
