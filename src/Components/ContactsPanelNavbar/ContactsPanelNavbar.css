@@ -21,6 +21,7 @@
 }
 
 .contacts-panel-navbar__wa-logo {
+    width: 104px;
     color: var(--WA-color-green);
 }
 
