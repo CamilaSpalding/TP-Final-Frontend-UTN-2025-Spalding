@@ -14,6 +14,7 @@ function ChatsList () {
 
     return (
         <div>
+            ChatsList
             {/* {
                 contacts.map(
                     (contact) => {
