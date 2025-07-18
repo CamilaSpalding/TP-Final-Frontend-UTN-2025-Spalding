@@ -1,0 +1,27 @@
+.contacts-panel-navbar {
+    height: 64px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contacts-panel-navbar__logo-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.contacts-panel-navbar__wa-logo {}
+
+.contacts-panel-navbar__nav {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.contacts-panel-navbar__button {}
+
+.contacts-panel-navbar__icon {}
+
