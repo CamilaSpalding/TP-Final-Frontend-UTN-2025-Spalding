@@ -10,7 +10,7 @@ import CloseIcon from '../../assets/icons/close.svg?react'
 function ContactsPanelSearcher () {
 
     const { searchContacts } = useContext(ContactsContext)
-    const [ searchText, setSearcherText ] = useState('')
+    const [ searchText, setSearchText ] = useState('')
     
     const handleChange = (event) => {
         const value = event.target.value
@@ -35,11 +35,11 @@ function ContactsPanelSearcher () {
                 type="text" 
                 id='searcher-input' 
                 placeholder='Buscar un chat o iniciar uno nuevo'
-                value={searchTerm}
+                value={searchText}
                 onChange={handleChange}
                 className='contacts-panel-searcher__input'
             />
-            { searchTerm && (
+            { searchText && (
                 <button
                     type='button'
                     className='contacts-panel-searcher__clear-btn'
