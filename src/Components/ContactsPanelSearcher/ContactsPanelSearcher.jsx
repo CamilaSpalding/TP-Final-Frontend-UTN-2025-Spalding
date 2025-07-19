@@ -4,7 +4,7 @@ import './ContactsPanelSearcher.css'
 
 /* Iconos */
 import SearchIcon from '../../assets/icons/search.svg?react'
-import CloseIcon from '../../assets/icons/close.svg?react'
+import ClearIcon from '../../assets/icons/clear.svg?react'
 
 
 function ContactsPanelSearcher () {
@@ -29,7 +29,7 @@ function ContactsPanelSearcher () {
                 Buscar un chat o iniciar uno nuevo
             </label>
 
-            <SearchIcon className='contacts-panel-searcher__icon' />
+            <SearchIcon className='contacts-panel-searcher__search-icon' />
             
             <input 
                 type="text" 

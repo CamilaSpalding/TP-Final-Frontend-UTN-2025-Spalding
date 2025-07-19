@@ -1,0 +1,57 @@
+.contacts-panel-searcher {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0px 20px;
+    margin-bottom: 5px;
+}
+
+.visually-hidden {
+    display: none;
+}
+
+.contacts-panel-searcher__search-icon {
+    position: absolute;
+    left: 34px;
+    width: 20px;
+    height: 20px;
+    color: var(--WA-color-black-60);
+    pointer-events: none;
+}
+
+.contacts-panel-searcher__input {
+    width: 100%;
+    height: 40px;
+    padding-left: 46px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    color: var(--WA-color-black);
+    background-color: var(--WA-color-bg);
+    outline: none;
+    caret-color: var(--WA-color-green);
+}
+
+.contacts-panel-searcher__input::placeholder {
+    color: var(--WA-color-black-50);
+}
+
+.contacts-panel-searcher__clear-btn {
+    position: absolute;
+    right: 20px;
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.contacts-panel-searcher__clear-icon {}
+
+
+
+.contacts-panel-searcher {
+    caret-color: 0,
+}
+
+#c6c3c2 rgb(198, 195, 194)
+#cccccc rgb(204, 204, 204)

@@ -29,6 +29,7 @@
     --WA-color-bg-yellow: #FFF7E5;
     --WA-color-neutral-black: #0A0A0A;
     --WA-color-black-60: rgba(0, 0, 0, .6);
+    --WA-color-black-50: rgba(0, 0, 0, .5);
     --WA-color-black-20: rgba(0, 0, 0, .2);
     --WA-color-black-10: rgba(0, 0, 0, .1); /* Bordes de los Profile Pics */
     --WA-color-black-05: rgba(0, 0, 0, .05); /* Fondo para el hover de los botones */
