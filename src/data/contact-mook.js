@@ -266,3 +266,5 @@ const mook_data = {
         },
     ]
 }
+
+export default mook_data
