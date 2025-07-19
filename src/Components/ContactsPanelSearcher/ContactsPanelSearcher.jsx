@@ -28,7 +28,7 @@ function ContactsPanelSearcher() {
             role='search' 
             action=''
             className='contacts-panel-searcher'
-            onSubmit={}
+            /* onSubmit={} */
         >
             <label htmlFor="search-input" className='visually-hidden'>
                 Buscar un chat o iniciar uno nuevo
