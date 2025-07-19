@@ -3,7 +3,7 @@
     align-items: center;
     position: relative;
     padding: 0px 20px;
-    margin-bottom: 5px;
+    margin-bottom: 9px;
 }
 
 .visually-hidden {
@@ -53,5 +53,5 @@
     caret-color: 0,
 }
 
-#c6c3c2 rgb(198, 195, 194)
-#cccccc rgb(204, 204, 204)
+/* #c6c3c2 rgb(198, 195, 194)
+#cccccc rgb(204, 204, 204) */
