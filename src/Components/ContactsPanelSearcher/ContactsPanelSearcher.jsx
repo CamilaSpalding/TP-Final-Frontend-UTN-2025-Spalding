@@ -46,7 +46,7 @@ function ContactsPanelSearcher () {
                     onClick={clearInput}
                     aria-label='Limpiar búsqueda'
                 >
-                    <CloseIcon className='contacts-panel-searcher__clear-icon' />
+                    <ClearIcon className='contacts-panel-searcher__clear-icon' />
                 </button>
             )}
         </form>

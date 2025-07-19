@@ -36,22 +36,28 @@
     color: var(--WA-color-black-50);
 }
 
+.contacts-panel-searcher__input:hover {
+    box-shadow: inset 0 0 0 1px var(--WA-color-black-20)
+}
+
+.contacts-panel-searcher__input:focus {
+    background-color: var(--WA-color-white);
+    box-shadow: inset 0 0 0 2px var(--WA-color-green)
+}
+
 .contacts-panel-searcher__clear-btn {
     position: absolute;
-    right: 20px;
+    right: 34px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     background: none;
     border: none;
     cursor: pointer;
 }
 
-.contacts-panel-searcher__clear-icon {}
-
-
-
-.contacts-panel-searcher {
-    caret-color: 0,
+.contacts-panel-searcher__clear-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--WA-color-black-60);
 }
-
-/* #c6c3c2 rgb(198, 195, 194)
-#cccccc rgb(204, 204, 204) */
