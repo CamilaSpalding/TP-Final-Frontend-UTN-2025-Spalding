@@ -18,6 +18,7 @@ const ContactsContextProvider = ({ children }) => {
     
     const [ contacts, setContacts ] = useState([])
     const [ isLoadingContacts, setIsloadingContacts ] = useState(true)
+    const [ isSearching, setIsSearching ] = useState(false)
     /* const [ filteredContacts, setFilteredContacts ] = useState([]) */
 
     const [ filteredResults, setFilteredResults ] = useState({
@@ -48,6 +49,9 @@ const ContactsContextProvider = ({ children }) => {
     }, [])
 
     const searchContacts = (searchText) => {
+
+        setIsSearching(true)
+
         const lowered = searchText.toLowerCase()
 
         const chats = []
@@ -106,6 +110,8 @@ const ContactsContextProvider = ({ children }) => {
             groups: groups,
             messages: messages
         })
+
+        setIsSearching(false)
     }
 
     return (

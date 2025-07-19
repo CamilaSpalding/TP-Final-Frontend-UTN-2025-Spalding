@@ -7,29 +7,24 @@ import SearchIcon from '../../assets/icons/search.svg?react'
 import CloseIcon from '../../assets/icons/close.svg?react'
 
 
-function ContactsPanelSearcher() {
+function ContactsPanelSearcher () {
 
-    const [searchTerm, setSearchTerm] = useState('')
     const { searchContacts } = useContext(ContactsContext)
+    const [ searchText, setSearcherText ] = useState('')
     
-    const handleChange = (e) => {
-        const value = e.target.value
-        setSearchTerm(value)
+    const handleChange = (event) => {
+        const value = event.target.value
+        setSearchText(value)
         searchContacts(value)
     }
 
     const clearInput = () => {
-        setSearchTerm('')
+        setSearchText('')
         searchContacts('')
     }
     
     return (
-        <form 
-            role='search' 
-            action=''
-            className='contacts-panel-searcher'
-            /* onSubmit={} */
-        >
+        <form role='search' className='contacts-panel-searcher'>
             <label htmlFor="search-input" className='visually-hidden'>
                 Buscar un chat o iniciar uno nuevo
             </label>
