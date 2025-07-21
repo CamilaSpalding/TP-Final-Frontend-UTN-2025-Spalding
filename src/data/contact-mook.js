@@ -8,10 +8,20 @@ import vectorProfilePic from '../assets/images/vector-profile-pic.jpg'
 import bobProfilePic from '../assets/images/bob-profile-pic.jpg'
 import stuartProfilePic from '../assets/images/stuart-profile-pic.jpg'
 import kevinProfilePic from '../assets/images/kevin-profile-pic.jpg'
+import userProfilePic from '../assets/images/user-profile-pic.jpg'
 
 // Este archivo solo contiene los datos de los contactos, simula ser un servidor.
 
 const mook_data = {
+    current_user: {
+        id: 0,
+        name: 'Anonimo',
+        phone: '+54 9 11 0000-0000',
+        profile_pic: userProfilePic,
+        info: 'Disponible',
+        group_ids: []
+    },
+
     contacts: [
         {
             id: 1,
@@ -20,82 +30,7 @@ const mook_data = {
             profile_pic: gruProfilePic,
             info: '¡Luz, cámara… desintegración!',
             last_time_connected: '20:51',
-            groups: [
-                {
-                    id: 1,
-                    name: 'Grupo de diseño',
-                    info: 'pindonga',
-                    profile_pic: '../assets/images/profile-pic.jpg',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: 'YO',
-                            text: 'Holis',
-                            sent_time: '10:20',
-                            sent_date: '16/05/2025',
-                            status: 'seen'
-                        },
-                        {
-                            id: 2,
-                            sender: 'Mariana',
-                            text: 'Como va?',
-                            sent_time: '11:15',
-                            sent_date: '16/05/2025',
-                            status: 'seen'
-                        },
-                        {
-                            id: 3,
-                            sender: 'Fabri',
-                            text: 'Todo tranqui',
-                            sent_time: '11:26',
-                            sent_date: '16/05/2025',
-                            status: 'received'
-                        },
-                    ],
-                    last_message: {
-                        id: 3, 
-                        sender: 'Fabri',
-                        text: 'Todo tranqui',
-                        sent_time: '11:26',
-                        sent_date: '16/05/2025',
-                        status: 'received'
-                    },
-                    unread_messages: 1
-                },
-                {
-                    id: 2,
-                    name: 'Us',
-                    info: 'Spalding Sr.',
-                    profile_pic: '../assets/images/profile-pic.jpg',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: 'Vero',
-                            text: 'Parecemos los locos Adams...',
-                            sent_time: '06:30',
-                            sent_date: '18/07/2025',
-                            status: 'seen'
-                        },
-                        {
-                            id: 2,
-                            sender: 'Marcos',
-                            text: 'Tenes razón',
-                            sent_time: '20:56',
-                            sent_date: '18/07/2025',
-                            status: 'received'
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: 'Marcos',
-                        text: 'Tenes razón',
-                        sent_time: '20:56',
-                        sent_date: '18/07/2025',
-                        status: 'received'
-                    },
-                    unread_messages: 0
-                }
-            ],
+            group_ids: [],
             messages: [
                 {
                     id: 1,
@@ -131,74 +66,7 @@ const mook_data = {
             profile_pic: agnesProfilePic,
             info: '¡Es tan esponjoooooso que voy a moriiiir!',
             last_time_connected: '',
-            groups: [
-                {
-                    id: 1,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                },
-                {
-                    id: 2,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                }
-            ],
+            group_ids: [],
             messages: [
                 {
                     id: 1,
@@ -234,74 +102,7 @@ const mook_data = {
             profile_pic: edithProfilePic,
             info: 'El peligro es mi segundo nombre... bueno, el tercero.',
             last_time_connected: '',
-            groups: [
-                {
-                    id: 1,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                },
-                {
-                    id: 2,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                }
-            ],
+            group_ids: [],
             messages: [
                 {
                     id: 1,
@@ -337,74 +138,7 @@ const mook_data = {
             profile_pic: margoProfilePic,
             info: 'Ser la hermana mayor no es fácil, créeme.',
             last_time_connected: '',
-            groups: [
-                {
-                    id: 1,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                },
-                {
-                    id: 2,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                }
-            ],
+            group_ids: [],
             messages: [
                 {
                     id: 1,
@@ -440,74 +174,7 @@ const mook_data = {
             profile_pic: nefarioProfilePic,
             info: '¡Creí que dijiste "baño" congelador!',
             last_time_connected: '',
-            groups: [
-                {
-                    id: 1,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                },
-                {
-                    id: 2,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                }
-            ],
+            group_ids: [],
             messages: [
                 {
                     id: 1,
@@ -543,74 +210,7 @@ const mook_data = {
             profile_pic: vectorProfilePic,
             info: 'Vector... ¡Con V de victoria!',
             last_time_connected: '',
-            groups: [
-                {
-                    id: 1,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                },
-                {
-                    id: 2,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                }
-            ],
+            group_ids: [],
             messages: [
                 {
                     id: 1,
@@ -646,74 +246,7 @@ const mook_data = {
             profile_pic: bobProfilePic,
             info: 'King Bob 👑',
             last_time_connected: '',
-            groups: [
-                {
-                    id: 1,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                },
-                {
-                    id: 2,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                }
-            ],
+            group_ids: [],
             messages: [
                 {
                     id: 1,
@@ -749,74 +282,7 @@ const mook_data = {
             profile_pic: stuartProfilePic,
             info: 'Banana y rock and roll 🎸🍌',
             last_time_connected: '',
-            groups: [
-                {
-                    id: 1,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                },
-                {
-                    id: 2,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                }
-            ],
+            group_ids: [],
             messages: [
                 {
                     id: 1,
@@ -852,74 +318,7 @@ const mook_data = {
             profile_pic: kevinProfilePic,
             info: '¡Banana! Pero con estrategia.',
             last_time_connected: '',
-            groups: [
-                {
-                    id: 1,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                },
-                {
-                    id: 2,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                }
-            ],
+            group_ids: [],
             messages: [
                 {
                     id: 1,
@@ -955,74 +354,7 @@ const mook_data = {
             profile_pic: kevinProfilePic,
             info: '¡Labial eléctrico! ⚡💄',
             last_time_connected: '',
-            groups: [
-                {
-                    id: 1,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                },
-                {
-                    id: 2,
-                    name: '',
-                    info: '',
-                    profile_pic: '',
-                    messages: [
-                        {
-                            id: 1,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                        {
-                            id: 2,
-                            sender: '',
-                            text: '',
-                            sent_time: '',
-                            sent_date: '',
-                            status: ''
-                        },
-                    ],
-                    last_message: {
-                        id: 0,
-                        sender: '',
-                        text: '',
-                        sent_time: '',
-                        sent_date: '',
-                        status: ''
-                    },
-                    unread_messages: 0
-                }
-            ],
+            group_ids: [],
             messages: [
                 {
                     id: 1,
@@ -1058,7 +390,7 @@ const mook_data = {
             profile_pic: '',
             info: 'Este mensaje se autodestruirá en 5 segundos.',
             last_time_connected: '',
-            groups: [],
+            group_ids: [],
             messages: [],
             last_message: null,
             unread_messages: 0
@@ -1070,7 +402,7 @@ const mook_data = {
             profile_pic: '',
             info: '¡Yo soy El Macho!',
             last_time_connected: '',
-            groups: [],
+            group_ids: [],
             messages: [],
             last_message: null,
             unread_messages: 0
@@ -1082,7 +414,7 @@ const mook_data = {
             profile_pic: '',
             info: '¡Buenas noches, mundo! Scarlett Overkill está aquí.',
             last_time_connected: '',
-            groups: [],
+            group_ids: [],
             messages: [],
             last_message: null,
             unread_messages: 0
@@ -1094,7 +426,7 @@ const mook_data = {
             profile_pic: '',
             info: '¡Amor, activé la lava otra vez!',
             last_time_connected: '',
-            groups: [],
+            group_ids: [],
             messages: [],
             last_message: null,
             unread_messages: 0
@@ -1106,7 +438,7 @@ const mook_data = {
             profile_pic: '',
             info: 'No esperaba mucho de ti, Gru… y aún así, me decepcionaste.',
             last_time_connected: '',
-            groups: [],
+            group_ids: [],
             messages: [],
             last_message: null,
             unread_messages: 0
@@ -1118,7 +450,7 @@ const mook_data = {
             profile_pic: '',
             info: 'Me rompes el corazón, nena.',
             last_time_connected: '',
-            groups: [],
+            group_ids: [],
             messages: [],
             last_message: null,
             unread_messages: 0
@@ -1130,7 +462,7 @@ const mook_data = {
             profile_pic: '',
             info: 'Mi hijo no es un fracaso. Solo es… excéntrico.',
             last_time_connected: '',
-            groups: [],
+            group_ids: [],
             messages: [],
             last_message: null,
             unread_messages: 0
@@ -1142,7 +474,7 @@ const mook_data = {
             profile_pic: '',
             info: '¡Tienes suerte de estar saliendo conmigo!',
             last_time_connected: '',
-            groups: [],
+            group_ids: [],
             messages: [],
             last_message: null,
             unread_messages: 0
@@ -1154,7 +486,7 @@ const mook_data = {
             profile_pic: '',
             info: '¡Estacioné mi auto eléctrico frente a tu casa!',
             last_time_connected: '',
-            groups: [],
+            group_ids: [],
             messages: [],
             last_message: null,
             unread_messages: 0
@@ -1166,7 +498,7 @@ const mook_data = {
             profile_pic: '',
             info: '¡Tengo la cita perfecta para ti!',
             last_time_connected: '',
-            groups: [],
+            group_ids: [],
             messages: [],
             last_message: null,
             unread_messages: 0
@@ -1178,7 +510,7 @@ const mook_data = {
             profile_pic: '',
             info: '¡Vamos a robar algo juntos, hermano!',
             last_time_connected: '',
-            groups: [],
+            group_ids: [],
             messages: [],
             last_message: null,
             unread_messages: 0
@@ -1190,7 +522,7 @@ const mook_data = {
             profile_pic: '',
             info: '¡Esa es mi corona, bribones!',
             last_time_connected: '',
-            groups: [],
+            group_ids: [],
             messages: [],
             last_message: null,
             unread_messages: 0
@@ -1202,7 +534,7 @@ const mook_data = {
             profile_pic: '',
             info: 'La energía viene del chi... y de este puño.',
             last_time_connected: '',
-            groups: [],
+            group_ids: [],
             messages: [],
             last_message: null,
             unread_messages: 0
@@ -1214,12 +546,59 @@ const mook_data = {
             profile_pic: '',
             info: '¡Alabado sea... mi nunchaku!',
             last_time_connected: '',
-            groups: [],
+            group_ids: [],
             messages: [],
             last_message: null,
             unread_messages: 0
         },
         
+    ],
+
+    groups: [
+        {
+            id: 1,
+            name: 'Grupo de diseño',
+            info: 'pindonga',
+            profile_pic: '../assets/images/profile-pic.jpg',
+            participant_ids: [0, 1, 2, 3], // IDs de contacts + current_user
+            messages: [
+                {
+                id: 1,
+                sender_id: 0,
+                text: 'Holis',
+                sent_time: '10:20',
+                sent_date: '16/05/2025',
+                status: 'seen'
+                },
+                {
+                id: 2,
+                sender_id: 1,
+                text: 'Cómo va?',
+                sent_time: '11:15',
+                sent_date: '16/05/2025',
+                status: 'seen'
+                }
+            ],
+            last_message: {
+                id: 2,
+                sender_id: 1,
+                text: 'Cómo va?',
+                sent_time: '11:15',
+                sent_date: '16/05/2025',
+                status: 'seen'
+            },
+            unread_messages: 1
+            },
+            {
+            id: 2,
+            name: 'Us',
+            info: 'Spalding Sr.',
+            profile_pic: '../assets/images/profile-pic.jpg',
+            participant_ids: [0, 1, 4], // Ejemplo
+            messages: [...],
+            last_message: {...},
+            unread_messages: 0
+        },
     ]
 }
 

@@ -1,8 +1,9 @@
 import React, { createContext, useEffect, useState } from 'react'
-import { getContactsList } from '../services/contactService'
+import { getContactsList, getGroupsList } from '../services/contactService'
 
 export const ContactsContext = createContext({
     contacts: [],
+    groups: [],
     isLoadingContacts: true,
     filteredResults: {
         chats: [],
