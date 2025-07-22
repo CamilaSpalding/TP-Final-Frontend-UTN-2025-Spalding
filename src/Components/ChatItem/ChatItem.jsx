@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
-import { formatTime } from '../../utils/dateUtils'
+import { formatTime } from '../../services/dateService'
 import './ChatItem.css'
 
 function ChatItem({ type, data, currentUserId }) {
