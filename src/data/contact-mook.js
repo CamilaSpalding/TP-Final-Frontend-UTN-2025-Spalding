@@ -34,7 +34,7 @@ const mook_data = {
             messages: [
                 {
                     id: 1,
-                    sender: '',
+                    sender_id: 0,
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -42,7 +42,7 @@ const mook_data = {
                 },
                 {
                     id: 2,
-                    sender: '',
+                    sender_id: 0,
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -51,7 +51,7 @@ const mook_data = {
             ],
             last_message: {
                 id: 0,
-                sender: '',
+                sender_id: 0,
                 text: '',
                 sent_time: '',
                 sent_date: '',
@@ -70,7 +70,7 @@ const mook_data = {
             messages: [
                 {
                     id: 1,
-                    sender: '',
+                    sender_id: 0,
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -78,7 +78,7 @@ const mook_data = {
                 },
                 {
                     id: 2,
-                    sender: '',
+                    sender_id: 0,
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -87,7 +87,7 @@ const mook_data = {
             ],
             last_message: {
                 id: 0,
-                sender: '',
+                sender_id: 0,
                 text: '',
                 sent_time: '',
                 sent_date: '',
@@ -106,7 +106,7 @@ const mook_data = {
             messages: [
                 {
                     id: 1,
-                    sender: '',
+                    sender_id: '',
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -114,7 +114,7 @@ const mook_data = {
                 },
                 {
                     id: 2,
-                    sender: '',
+                    sender_id: '',
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -123,7 +123,7 @@ const mook_data = {
             ],
             last_message: {
                 id: 0,
-                sender: '',
+                sender_id: '',
                 text: '',
                 sent_time: '',
                 sent_date: '',
@@ -142,7 +142,7 @@ const mook_data = {
             messages: [
                 {
                     id: 1,
-                    sender: '',
+                    sender_id: '',
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -150,7 +150,7 @@ const mook_data = {
                 },
                 {
                     id: 2,
-                    sender: '',
+                    sender_id: '',
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -159,7 +159,7 @@ const mook_data = {
             ],
             last_message: {
                 id: 0,
-                sender: '',
+                sender_id: '',
                 text: '',
                 sent_time: '',
                 sent_date: '',
@@ -178,7 +178,7 @@ const mook_data = {
             messages: [
                 {
                     id: 1,
-                    sender: '',
+                    sender_id: '',
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -186,7 +186,7 @@ const mook_data = {
                 },
                 {
                     id: 2,
-                    sender: '',
+                    sender_id: '',
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -195,7 +195,7 @@ const mook_data = {
             ],
             last_message: {
                 id: 0,
-                sender: '',
+                sender_id: '',
                 text: '',
                 sent_time: '',
                 sent_date: '',
@@ -214,7 +214,7 @@ const mook_data = {
             messages: [
                 {
                     id: 1,
-                    sender: '',
+                    sender_id: '',
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -222,7 +222,7 @@ const mook_data = {
                 },
                 {
                     id: 2,
-                    sender: '',
+                    sender_id: '',
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -231,7 +231,7 @@ const mook_data = {
             ],
             last_message: {
                 id: 0,
-                sender: '',
+                sender_id: '',
                 text: '',
                 sent_time: '',
                 sent_date: '',
@@ -250,7 +250,7 @@ const mook_data = {
             messages: [
                 {
                     id: 1,
-                    sender: '',
+                    sender_id: '',
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -258,7 +258,7 @@ const mook_data = {
                 },
                 {
                     id: 2,
-                    sender: '',
+                    sender_id: '',
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -267,7 +267,7 @@ const mook_data = {
             ],
             last_message: {
                 id: 0,
-                sender: '',
+                sender_id: '',
                 text: '',
                 sent_time: '',
                 sent_date: '',
@@ -286,7 +286,7 @@ const mook_data = {
             messages: [
                 {
                     id: 1,
-                    sender: '',
+                    sender_id: '',
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -294,7 +294,7 @@ const mook_data = {
                 },
                 {
                     id: 2,
-                    sender: '',
+                    sender_id: '',
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -303,7 +303,7 @@ const mook_data = {
             ],
             last_message: {
                 id: 0,
-                sender: '',
+                sender_id: '',
                 text: '',
                 sent_time: '',
                 sent_date: '',
@@ -322,7 +322,7 @@ const mook_data = {
             messages: [
                 {
                     id: 1,
-                    sender: '',
+                    sender_id: '',
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -330,7 +330,7 @@ const mook_data = {
                 },
                 {
                     id: 2,
-                    sender: '',
+                    sender_id: '',
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -339,7 +339,7 @@ const mook_data = {
             ],
             last_message: {
                 id: 0,
-                sender: '',
+                sender_id: '',
                 text: '',
                 sent_time: '',
                 sent_date: '',
@@ -358,7 +358,7 @@ const mook_data = {
             messages: [
                 {
                     id: 1,
-                    sender: '',
+                    sender_id: '',
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -366,7 +366,7 @@ const mook_data = {
                 },
                 {
                     id: 2,
-                    sender: '',
+                    sender_id: '',
                     text: 'hola 1',
                     sent_time: '',
                     sent_date: '',
@@ -375,7 +375,7 @@ const mook_data = {
             ],
             last_message: {
                 id: 0,
-                sender: '',
+                sender_id: '',
                 text: '',
                 sent_time: '',
                 sent_date: '',
