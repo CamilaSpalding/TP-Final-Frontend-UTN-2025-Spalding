@@ -3,6 +3,11 @@ import { Link } from 'react-router'
 import { formatTime } from '../../services/dateService'
 import './ChatItem.css'
 
+/* Iconos */
+import SendingClockIcon from '../../assets/icons/sending-clock.svg?react'
+import SingleCheckIcon from '../../assets/icons/single-check.svg?react'
+import DoubleCheckIcon from '../../assets/icons/double-check.svg?react'
+
 function ChatItem({ type, data, currentUserId }) {
 
     const isChat = type === 'chat'
