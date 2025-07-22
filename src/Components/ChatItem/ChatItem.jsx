@@ -1,12 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router'
 import { formatTime } from '../../services/dateService'
+import { getMessageStatusIcon } from '../../services/statusService'
 import './ChatItem.css'
-
-/* Iconos */
-import SendingClockIcon from '../../assets/icons/sending-clock.svg?react'
-import SingleCheckIcon from '../../assets/icons/single-check.svg?react'
-import DoubleCheckIcon from '../../assets/icons/double-check.svg?react'
 
 function ChatItem({ type, data, currentUserId }) {
 
@@ -15,46 +11,48 @@ function ChatItem({ type, data, currentUserId }) {
     const isGroup = type === 'group'
     const isMessage = type === 'message'
 
-    /* Manejo del contenido según typo de elemento */
-    const lastMessage = isChat || isGroup
-        ? data.last_message
-        : null
 
+    /* Manejo del contenido según typo de elemento */
     const name = isMessage
         ? data.contact_name || data.group_name
         : data.name
 
-    const profilePic = isMessage
-        ? data.profile_pic
-        : data.profile_pic
+    const profilePic = !isMessage ? data.profile_pic : null
 
-    const unreadMessages = data.unread_messages || 0
+    const lastMessage = (isChat || isGroup) ? data.last_message : null
 
-    /* Manejo del mensaje a mostrar */
     const messageText = isMessage
         ? data.text
-        : (lastMessage?.text || (isContact ? data.info : ''))
+        : (lastMessage?.text || data.info)
 
+
+    /* Manejo de los estados de los mensajes enviados por uno mismo */
     const isSentByUser = isMessage
         ? data.is_sent_by_user
         : lastMessage?.sender_id === currentUserId
 
     const messageStatus = isSentByUser
-        ? (lastMessage?.status || (isMessage ? data.status : null))
+        ? (isMessage ? data.status : lastMessage?.status)
         : null
+
+    const StatusIcos = getMessageStatusIcon(messageStatus)
+
 
     /* Manejo del horario a mostrar */
     const rawTime = isMessage
         ? data.sent_time
         : lastMessage?.sent_time || ''
 
-    const formatTime = (timeStr) => {
-        return timeStr /* En proceso */
-    }
+    const formattedTime = formatTime(rawTime)
+
+
+    /* Manejo de los mensajes no leidos */
+    const unreadMessages = data.unread_messages || 0
+
 
     /* Manejo de los URL */
     const linkTo = isGroup
-        ? `/group/${data.id}`
+        ? `/group/${data.id}` /* EN REVISIÓN */
         : `/chat/${data.contact_id ?? data.id}`
 
     /* return (
