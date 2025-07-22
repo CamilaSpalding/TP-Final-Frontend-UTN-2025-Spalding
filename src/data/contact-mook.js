@@ -595,8 +595,8 @@ const mook_data = {
             info: 'Spalding Sr.',
             profile_pic: '../assets/images/profile-pic.jpg',
             participant_ids: [0, 1, 4], // Ejemplo
-            messages: [...],
-            last_message: {...},
+            messages: [],
+            last_message: {},
             unread_messages: 0
         },
     ]
