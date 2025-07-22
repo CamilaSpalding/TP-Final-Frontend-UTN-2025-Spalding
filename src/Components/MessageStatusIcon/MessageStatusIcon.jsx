@@ -1,9 +1,13 @@
+import React from 'react'
+
 /* Iconos */
 import SendingClockIcon from '../assets/icons/sending-clock.svg?react'
 import SingleCheckIcon from '../assets/icons/single-check.svg?react'
 import DoubleCheckIcon from '../assets/icons/double-check.svg?react'
 
-export const getMessageStatusIcon = (status) => {
+function StatusIcon ({ status }) {
+    if (!status) return null
+
     switch (status) {
         case 'sending':
             return <SendingClockIcon className='message-status-icon gray' />
@@ -17,6 +21,9 @@ export const getMessageStatusIcon = (status) => {
             return null
     }
 }
+
+export default StatusIcon
+
 
 /* .message-status-icon {
     width: 16px;

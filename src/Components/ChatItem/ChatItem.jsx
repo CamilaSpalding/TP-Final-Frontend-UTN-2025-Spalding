@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import { formatTime } from '../../services/dateService'
-import { getMessageStatusIcon } from '../MessageStatusIcon/MessageStatusIcon'
+import StatusIcon from '../MessageStatusIcon/MessageStatusIcon'
 import './ChatItem.css'
 
 function ChatItem({ type, data, currentUserId }) {
@@ -34,9 +34,7 @@ function ChatItem({ type, data, currentUserId }) {
     const messageStatus = isSentByUser
         ? (isMessage ? data.status : lastMessage?.status)
         : null
-
-    /* const StatusIcon = getMessageStatusIcon(messageStatus) */
-
+        
 
     /* Manejo del horario a mostrar */
     /* const rawTime = isMessage
@@ -84,8 +82,10 @@ function ChatItem({ type, data, currentUserId }) {
 
                 <div className='chat-item__bottom-content'>
                     <p className='chat-item__message'>
-                        { isSentByUser && StatusIcon && (
-                            <span><StatusIcon className={`chat-item__status-icon ${messageStatus === 'seen' ? 'seen' : ''}`} /></span>
+                        { isSentByUser && (
+                            <span className='chat-item__status-icon-container'>
+                                <StatusIcon status={messageStatus} />
+                            </span>
                         )}
                         {messageText}
                     </p>
