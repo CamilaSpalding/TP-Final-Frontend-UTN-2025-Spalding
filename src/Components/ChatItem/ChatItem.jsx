@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import { formatTime } from '../../utils/dateUtils'
 import './ChatItem.css'
 
 function ChatItem({ type, data, currentUserId }) {
@@ -45,6 +46,11 @@ function ChatItem({ type, data, currentUserId }) {
     const formatTime = (timeStr) => {
         return timeStr /* En proceso */
     }
+
+    /* Manejo de los URL */
+    const linkTo = isGroup
+        ? `/group/${data.id}`
+        : `/chat/${data.contact_id ?? data.id}`
 
     /* return (
         <Link to={`/contacts/${id}/chat`}>
