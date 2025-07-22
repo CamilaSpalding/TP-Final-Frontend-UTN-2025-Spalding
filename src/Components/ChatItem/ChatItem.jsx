@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import { formatTime } from '../../services/dateService'
-import { getMessageStatusIcon } from '../../services/statusService'
+import { getMessageStatusIcon } from '../MessageStatusIcon/MessageStatusIcon'
 import './ChatItem.css'
 
 function ChatItem({ type, data, currentUserId }) {
@@ -35,16 +35,31 @@ function ChatItem({ type, data, currentUserId }) {
         ? (isMessage ? data.status : lastMessage?.status)
         : null
 
-    const StatusIcos = getMessageStatusIcon(messageStatus)
+    /* const StatusIcon = getMessageStatusIcon(messageStatus) */
 
 
     /* Manejo del horario a mostrar */
-    const rawTime = isMessage
+    /* const rawTime = isMessage
         ? data.sent_time
         : lastMessage?.sent_time || ''
 
-    const formattedTime = formatTime(rawTime)
+    const formattedTime = formatTime(rawTime) */
+    const sentTime = isMessage
+        ? data.sent_time
+        : lastMessage?.sent_time
 
+    const sentDate = isMessage
+        ? date.sent_date
+        : lastMessage?.sent_date
+
+    const formattedTime = formatTime(sentTime, sentDate)
+
+    console.log('⏱️', {
+        name,
+        sent_time: sentTime,
+        sent_date: sentDate,
+        formatted: formattedTime
+    })
 
     /* Manejo de los mensajes no leidos */
     const unreadMessages = data.unread_messages || 0
@@ -54,6 +69,39 @@ function ChatItem({ type, data, currentUserId }) {
     const linkTo = isGroup
         ? `/group/${data.id}` /* EN REVISIÓN */
         : `/chat/${data.contact_id ?? data.id}`
+
+    
+    return (
+        <Link to={linkTo} className='chat-item'>
+            { profilePic && (
+                <img src={profilePic} alt={`${name}'s profile pic`} className='chat-item__profile-pic' />
+            )}
+            <div className='chat-item__main-content' >
+                <div className='chat-item__top-content' >
+                    <strong className='chat-item__name'>{name}</strong>
+                    <span className='chat-item__time'>{formattedTime}</span>
+                </div>
+
+                <div className='chat-item__bottom-content'>
+                    <p className='chat-item__message'>
+                        { isSentByUser && StatusIcon && (
+                            <span><StatusIcon className={`chat-item__status-icon ${messageStatus === 'seen' ? 'seen' : ''}`} /></span>
+                        )}
+                        {messageText}
+                    </p>
+
+                    { unreadMessages > 0 && (
+                        <div className='chat-item__settings-container'>
+                            <span className='chat-item__unread-msg-badge'>{unreadMessages}</span>
+                            {/* <span className='chat-item__silenced-icon'></span> */}
+                            {/* <span className='chat-item__pinned-icon'></span> */}
+                        </div>
+                    )}
+                </div>
+
+            </div>
+        </Link>
+    )
 
     /* return (
         <Link to={`/contacts/${id}/chat`}>

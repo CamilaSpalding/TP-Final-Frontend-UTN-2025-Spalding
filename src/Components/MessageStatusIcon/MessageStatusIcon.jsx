@@ -1,7 +1,7 @@
 /* Iconos */
-import SendingClockIcon from '../../assets/icons/sending-clock.svg?react'
-import SingleCheckIcon from '../../assets/icons/single-check.svg?react'
-import DoubleCheckIcon from '../../assets/icons/double-check.svg?react'
+import SendingClockIcon from '../assets/icons/sending-clock.svg?react'
+import SingleCheckIcon from '../assets/icons/single-check.svg?react'
+import DoubleCheckIcon from '../assets/icons/double-check.svg?react'
 
 export const getMessageStatusIcon = (status) => {
     switch (status) {
