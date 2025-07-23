@@ -13,7 +13,8 @@ export const ContactsContext = createContext({
         groups: [],
         messages: []
     },
-    searchContacts: (searchText) => {}
+    searchContacts: (searchText) => {},
+    hasSearched: false
 })
 
 const ContactsContextProvider = ({ children }) => {
@@ -23,6 +24,7 @@ const ContactsContextProvider = ({ children }) => {
     const [ groups, setGroups ] = useState([])
     const [ isLoadingContacts, setIsLoadingContacts ] = useState(true)
     const [ isSearching, setIsSearching ] = useState(false)
+    const [ hasSearched, setHasSearched ] = useState(false)
 
     const [ filteredResults, setFilteredResults ] = useState({
         chats: [],
@@ -48,8 +50,21 @@ const ContactsContextProvider = ({ children }) => {
 
     const searchContacts = (searchText) => {
 
+        if (searchText === '') {
+            setFilteredResults({
+                chats: [],
+                contacts: [],
+                groups: [],
+                messages: []
+            })
+            setHasSearched(false)
+            setIsSearching(false)
+            return
+        }
+
         const lowered = searchText.toLowerCase()
         setIsSearching(true)
+        setHasSearched(true)
 
         const chats = []
         const contactsOnly = []
@@ -132,7 +147,8 @@ const ContactsContextProvider = ({ children }) => {
                     isLoadingContacts: isLoadingContacts,
                     isSearching: isSearching,
                     filteredResults: filteredResults,
-                    searchContacts: searchContacts
+                    searchContacts: searchContacts,
+                    hasSearched: hasSearched
                 }
             }
         >

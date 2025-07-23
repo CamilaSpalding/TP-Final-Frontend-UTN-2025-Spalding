@@ -13,7 +13,7 @@ function ChatsList () {
         )
     } */
 
-    const { currentUser, contacts, groups, isLoadingContacts, isSearching, filteredResults } = useContext(ContactsContext)
+    const { currentUser, contacts, groups, isLoadingContacts, isSearching, filteredResults, hasSearched } = useContext(ContactsContext)
 
     if (isLoadingContacts) return <Loader />
 
@@ -103,7 +103,7 @@ function ChatsList () {
     } */
 
     /* CORRECCIÓN */
-    if (!hasFilteredResults && !isSearching) {
+    if ( hasSearched && !hasFilteredResults && !isSearching) {
         return (
             <div className="chats-list__message">
                 No se encontró ningún chat, contacto ni mensaje.
