@@ -59,17 +59,11 @@ function ChatItem({ type, data, currentUserId }) {
         : lastMessage?.sent_time
 
     const sentDate = isMessage
-        ? date.sent_date
+        ? data.sent_date
         : lastMessage?.sent_date
 
     const formattedTime = formatTime(sentTime, sentDate)
 
-    console.log('⏱️', {
-        name,
-        sent_time: sentTime,
-        sent_date: sentDate,
-        formatted: formattedTime
-    })
 
     /* Manejo de los mensajes no leidos */
     const unreadMessages = data.unread_messages || 0
