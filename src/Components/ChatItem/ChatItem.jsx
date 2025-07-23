@@ -11,7 +11,7 @@ import DoubleCheckIcon from '../../assets/icons/double-check.svg?react'
 function ChatItem({ type, data, currentUserId }) {
 
     if (!data) return null
-    
+
     const isChat = type === 'chat'
     const isContact = type === 'contact'
     const isGroup = type === 'group'
@@ -76,34 +76,39 @@ function ChatItem({ type, data, currentUserId }) {
     
     return (
         <Link to={linkTo} className='chat-item'>
-            { profilePic && (
-                <img src={profilePic} alt={`${name}'s profile pic`} className='chat-item__profile-pic' />
-            )}
-            <div className='chat-item__main-content' >
-                <div className='chat-item__top-content' >
-                    <strong className='chat-item__name'>{name}</strong>
-                    <span className='chat-item__time'>{formattedTime}</span>
-                </div>
+            <div className='chat-item__content'>
+                { profilePic && (
+                    
 
-                <div className='chat-item__bottom-content'>
-                    <p className='chat-item__message'>
-                        { StatusIcon && (
-                            <span>
-                                <StatusIcon className={`chat-item__status-icon ${messageStatus === 'seen' ? 'blue' : 'gray'}`} />
-                            </span>
+                    
+                    <img src={profilePic} alt={`${name}'s profile pic`} className='chat-item__profile-pic' />
+                )}
+                <div className='chat-item__main-content' >
+                    <div className='chat-item__top-content' >
+                        <span className='chat-item__name'>{name}</span>
+                        <span className='chat-item__time'>{formattedTime}</span>
+                    </div>
+
+                    <div className='chat-item__bottom-content'>
+                        <p className='chat-item__message'>
+                            { StatusIcon && (
+                                <span>
+                                    <StatusIcon className={`chat-item__status-icon ${messageStatus === 'seen' ? 'blue' : 'gray'}`} />
+                                </span>
+                            )}
+                            {messageText}
+                        </p>
+
+                        { unreadMessages > 0 && (
+                            <div className='chat-item__indicators-container'>
+                                <span className='chat-item__unread-msg-badge'>{unreadMessages}</span>
+                                {/* <span className='chat-item__silenced-icon'></span> */}
+                                {/* <span className='chat-item__pinned-icon'></span> */}
+                            </div>
                         )}
-                        {messageText}
-                    </p>
+                    </div>
 
-                    { unreadMessages > 0 && (
-                        <div className='chat-item__indicators-container'>
-                            <span className='chat-item__unread-msg-badge'>{unreadMessages}</span>
-                            {/* <span className='chat-item__silenced-icon'></span> */}
-                            {/* <span className='chat-item__pinned-icon'></span> */}
-                        </div>
-                    )}
                 </div>
-
             </div>
         </Link>
     )
