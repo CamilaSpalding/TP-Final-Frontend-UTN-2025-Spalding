@@ -49,11 +49,6 @@ function ChatItem({ type, data, currentUserId }) {
 
 
     /* Manejo del horario a mostrar */
-    /* const rawTime = isMessage
-        ? data.sent_time
-        : lastMessage?.sent_time || ''
-
-    const formattedTime = formatTime(rawTime) */
     const sentTime = isMessage
         ? data.sent_time
         : lastMessage?.sent_time
@@ -108,18 +103,6 @@ function ChatItem({ type, data, currentUserId }) {
             </div>
         </Link>
     )
-
-    /* return (
-        <Link to={`/contacts/${id}/chat`}>
-            <img src={profile_pic} alt={`${name}'s profile image`} />
-            <h3>{name}</h3>
-            <div>
-                {last_message.text}
-            </div>
-            <span>{unread_messages}</span>
-            <span>Última conección: {last_time_connected}</span>
-        </Link>
-    ) */
 }
 
 export default ChatItem
