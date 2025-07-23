@@ -1,4 +1,23 @@
+.chat-item {
+    display: flex;
+    justify-content: row;
+    align-items: center;
+    gap: 15px;
+}
 
+.chat-item__profile-pic {}
+
+.chat-item__main-content {}
+
+.chat-item__top-content {}
+
+.chat-item__name {}
+
+.chat-item__time {}
+
+.chat-item__bottom-content {}
+
+.chat-item__message {}
 
 .chat-item__status-icon {
     width: 16px;
@@ -12,3 +31,7 @@
 .chat-item__status-icon.blue {
     color: var(--WA-color-seen-blue);
 }
+
+.chat-item__indicators-container {}
+
+.chat-item__unread-msg-badge {}

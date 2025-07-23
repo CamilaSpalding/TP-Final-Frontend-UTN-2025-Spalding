@@ -10,6 +10,8 @@ import DoubleCheckIcon from '../../assets/icons/double-check.svg?react'
 
 function ChatItem({ type, data, currentUserId }) {
 
+    if (!data) return null
+    
     const isChat = type === 'chat'
     const isContact = type === 'contact'
     const isGroup = type === 'group'
@@ -94,7 +96,7 @@ function ChatItem({ type, data, currentUserId }) {
                     </p>
 
                     { unreadMessages > 0 && (
-                        <div className='chat-item__settings-container'>
+                        <div className='chat-item__indicators-container'>
                             <span className='chat-item__unread-msg-badge'>{unreadMessages}</span>
                             {/* <span className='chat-item__silenced-icon'></span> */}
                             {/* <span className='chat-item__pinned-icon'></span> */}

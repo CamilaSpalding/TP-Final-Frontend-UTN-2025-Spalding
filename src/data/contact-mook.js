@@ -558,6 +558,7 @@ const mook_data = {
         {
             id: 1,
             name: 'Grupo de diseño',
+            created_date: '10/07/2025',
             info: 'pindonga',
             profile_pic: '../assets/images/profile-pic.jpg',
             participant_ids: [0, 1, 2, 3], // IDs de contacts + current_user
@@ -591,8 +592,9 @@ const mook_data = {
             },
             {
             id: 2,
-            name: 'Us',
-            info: 'Spalding Sr.',
+            name: 'Villanos Unidos',
+            created_date: '23/07/2025',
+            info: 'Sr.',
             profile_pic: '../assets/images/profile-pic.jpg',
             participant_ids: [0, 1, 4], // Ejemplo
             messages: [],
