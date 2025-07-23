@@ -1,0 +1,14 @@
+
+
+.chat-item__status-icon {
+    width: 16px;
+    /* height: 16px; */
+}
+
+.chat-item__status-icon.gray {
+    color: var(--WA-color-black-60);
+}
+
+.chat-item__status-icon.blue {
+    color: var(--WA-color-seen-blue);
+}

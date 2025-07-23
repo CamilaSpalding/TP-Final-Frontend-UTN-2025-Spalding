@@ -1,8 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router'
 import { formatTime } from '../../services/dateService'
-import StatusIcon from '../MessageStatusIcon/MessageStatusIcon'
 import './ChatItem.css'
+
+/* Iconos */
+import SendingClockIcon from '../../assets/icons/sending-clock.svg?react'
+import SingleCheckIcon from '../../assets/icons/single-check.svg?react'
+import DoubleCheckIcon from '../../assets/icons/double-check.svg?react'
 
 function ChatItem({ type, data, currentUserId }) {
 
@@ -26,7 +30,7 @@ function ChatItem({ type, data, currentUserId }) {
         : (lastMessage?.text || data.info)
 
 
-    /* Manejo de los estados de los mensajes enviados por uno mismo */
+    /* Manejo de los estados de los mensajes enviados por el usuario */
     const isSentByUser = isMessage
         ? data.is_sent_by_user
         : lastMessage?.sender_id === currentUserId
@@ -34,7 +38,15 @@ function ChatItem({ type, data, currentUserId }) {
     const messageStatus = isSentByUser
         ? (isMessage ? data.status : lastMessage?.status)
         : null
-        
+
+    /* Manejo del icono según estado del mensaje */
+    const StatusIcon = isSentByUser && messageStatus && {
+        sending: SendingClockIcon,
+        sent: SingleCheckIcon,
+        received: DoubleCheckIcon,
+        seen: DoubleCheckIcon 
+    } [messageStatus] || null
+
 
     /* Manejo del horario a mostrar */
     /* const rawTime = isMessage
@@ -82,9 +94,9 @@ function ChatItem({ type, data, currentUserId }) {
 
                 <div className='chat-item__bottom-content'>
                     <p className='chat-item__message'>
-                        { isSentByUser && (
-                            <span className='chat-item__status-icon-container'>
-                                <StatusIcon status={messageStatus} />
+                        { StatusIcon && (
+                            <span>
+                                <StatusIcon className={`chat-item__status-icon ${messageStatus === 'seen' ? 'blue' : 'gray'}`} />
                             </span>
                         )}
                         {messageText}
