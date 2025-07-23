@@ -3,6 +3,7 @@
     background-color: var(--WA-color-white);
     text-decoration: none;
     cursor: pointer;
+    padding-top: 4px;
 }
 
 .chat-item:hover {
