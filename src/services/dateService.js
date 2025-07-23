@@ -31,7 +31,7 @@ export const formatTime = (sent_time, sent_date) => {
 
     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
 
-    const diffTime = today - messsageDate
+    const diffTime = today - messageDate
     const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24))
 
     if (diffDays === 0) {
