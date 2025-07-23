@@ -40,12 +40,14 @@ function ChatItem({ type, data, currentUserId }) {
         : null
 
     /* Manejo del icono según estado del mensaje */
-    const StatusIcon = isSentByUser && messageStatus && {
+    const iconMap = {
         sending: SendingClockIcon,
         sent: SingleCheckIcon,
         received: DoubleCheckIcon,
-        seen: DoubleCheckIcon 
-    } [messageStatus] || null
+        seen: DoubleCheckIcon
+    }
+
+    const StatusIcon = isSentByUser && messageStatus ? iconMap[messageStatus] : null
 
 
     /* Manejo del horario a mostrar */
