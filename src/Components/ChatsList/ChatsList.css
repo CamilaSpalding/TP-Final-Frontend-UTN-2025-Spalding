@@ -3,16 +3,18 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    padding: 0px 10px;
+    padding: /* 0px 2px */ 0px 10px;
     background-color: var(--WA-color-white);
+    margin-right: 2px;
 }
 
-.chats-list::-webkit-scrollbar {
+.chats-list:hover::-webkit-scrollbar {
     width: 6px;
+    /* margin-right: 1px; */
 }
 
-.chats-list::-webkit-scrollbar-thumb {
-    background-color: var(--WA-color-black-20);
+.chats-list:hover::-webkit-scrollbar-thumb {
+    background-color: var(--WA-color-black-10);
     border-radius: 3px;
 }
 

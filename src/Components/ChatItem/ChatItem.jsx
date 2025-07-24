@@ -101,7 +101,9 @@ function ChatItem({ type, data, currentUserId }) {
 
                         { unreadMessages > 0 && (
                             <div className='chat-item__indicators-container'>
-                                <span className='chat-item__unread-msg-badge'>{unreadMessages}</span>
+                                <div className='chat-item__unread-msg-badge'>
+                                    <span className='chat-item__unread-messages'>{unreadMessages}</span>
+                                </div>
                                 {/* <span className='chat-item__silenced-icon'></span> */}
                                 {/* <span className='chat-item__pinned-icon'></span> */}
                             </div>
