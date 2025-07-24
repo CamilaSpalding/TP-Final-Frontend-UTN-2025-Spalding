@@ -42,7 +42,7 @@ const MessagesContextProvider = ({ children }) => {
     const addNewMessage = (text) => {
         const newMessage = {
             id: `${Date.now()}-${Math.floor(Math.random() * 10000)}`,
-            sender_id: /* currentUser?.id ??  */0,
+            sender_id: 0,
             sent_time: new Date().toLocaleTimeString([], {
                 hour: '2-digit',
                 minute: '2-digit',
