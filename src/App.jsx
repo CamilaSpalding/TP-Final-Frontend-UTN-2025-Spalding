@@ -23,7 +23,7 @@ function App () {
           />
 
           <Route 
-            path='/contact/:contact_id/chat'
+            path='/:type/:id/chat'
             element={
               <MessagesContextProvider>
                 <ChatScreen />
@@ -32,7 +32,7 @@ function App () {
           />
 
           <Route 
-            path='/contact/:contact_id/detail'
+            path='/:type/:id/detail'
             element={
               <ContactDetailContextProvider>
                 <ContactDetailScreen />

@@ -8,12 +8,12 @@ import NewMessageForm from '../../Components/NewMessageForm/NewMessageForm' */
 import './ChatScreen.css'
 
 function ChatScreen() {
-    const { contact_id } = useParams()
+    const { id, type } = useParams()
     const { messages, isMessagesLoading, loadMessages } = useContext(MessagesContext)
 
     useEffect(() => {
-        loadMessages(contact_id)
-    }, [contact_id])
+        loadMessages(id,type)
+    }, [id, type])
 
     if (isMessagesLoading) {
         return <Loader />
@@ -21,7 +21,7 @@ function ChatScreen() {
 
     return (
         <div className='chat-screen'>
-            <h2>Chat con contacto {contact_id}</h2>
+            <h2>Chat con {type} {id}</h2>
 
             <ul>
                 { messages.map ((msg, index) => (
