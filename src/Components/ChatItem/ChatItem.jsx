@@ -70,8 +70,8 @@ function ChatItem({ type, data, currentUserId }) {
 
     /* Manejo de los URL */
     const linkTo = isGroup
-        ? `/group/${data.id}` /* EN REVISIÓN */
-        : `/chat/${data.contact_id ?? data.id}`
+        ? `/group/${data.id}/chat` /* EN REVISIÓN */
+        : `/contact/${data.contact_id ?? data.id}/chat`
 
     
     return (
