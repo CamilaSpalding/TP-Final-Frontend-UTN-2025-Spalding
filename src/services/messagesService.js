@@ -9,3 +9,12 @@ export const getMessagesByContactId = (contact_id) => {
 
     return null
 }
+
+export const getMessagesByGroupId = (group_id) => {
+    for (const group of mook_data.groups) {
+        if (Number(group.id) === Number(group_id)) {
+            return group.messages
+        }
+    }
+    return null
+}
