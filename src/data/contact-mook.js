@@ -81,7 +81,7 @@ const mook_data = {
                 {
                     id: 2,
                     sender_id: 0,
-                    text: 'hola 1',
+                    text: 'hola 2',
                     sent_time: '',
                     sent_date: '',
                     status: '' 

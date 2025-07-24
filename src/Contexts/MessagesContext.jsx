@@ -23,38 +23,41 @@ const MessagesContextProvider = ({ children }) => {
     const loadMessages = (contact_id) => {
         setIsMessagesLoading(true)
 
-        setTimeout(
-            () => {
-                const messages = getMessagesByContactId(contact_id)
-                setMessages(messages)
+        setTimeout(() => {
+                /* const messages = getMessagesByContactId(contact_id) 
+                setMessages(messages) */
+                const fetchedMessages = getMessagesByContactId(contact_id)
+                setMessages(fetchedMessages || [])
                 setIsMessagesLoading(false)
-            },
-            1500
-        )
+            }, 1000)
 
-        const messages = getMessagesByContactId(contact_id)
-        setMessages(messages)
+        /* const messages = getMessagesByContactId(contact_id)
+        setMessages(messages) */
     }
 
     const addNewMessage = (text) => {
         const newMessage = {
             id: `${Date.now()}-${Math.floor(Math.random() * 10000)}`,
-            sender: 'Yo',
+            sender_id: currentUser?.id ?? 0,
             sent_time: new Date().toLocaleTimeString([], {
                 hour: '2-digit',
                 minute: '2-digit',
                 hour12: false
             }),
+            sent_date: new Date().toLocaleDateString('es-AR'),
             text: text,
             status: 'sending'
         }
 
-        const previousMessages = [...messages]
+        /* const previousMessages = [...messages]
         previousMessages.push(newMessage)
-        setMessages(previousMessages)
+        setMessages(previousMessages) */
+
+        /* Para agregar el nuevo mensaje al estado */
+        setMessages(prev => [...prev, newMessage])
 
         // Actualizar a 'sent' después de 1 segundo
-        setTimeout(() => {
+        /* setTimeout(() => {
             const updatedMessages = []
             for (const message of messages) {
                 if (message.id === newMessage.id) {
@@ -69,10 +72,20 @@ const MessagesContextProvider = ({ children }) => {
             }
             setMessages(updatedMessages)
         },
-        1000 )
+        1000 ) */
+        /* CORRECCIÓN */
+        setTimeout(() => {
+            setMessages(prev =>
+                prev.map(msg =>
+                    msg.id === newMessage.id ? { ...msg, status: 'sent' } : msg
+                )
+            )
+        }, 1000)
+
+
 
         // Actualizar a 'receives' después de 3 segundos
-        setTimeout(() => {
+        /* setTimeout(() => {
             const updatedMessages = []
             for (const message of messages) {
                 if (message.id === newMessage.id) {
@@ -87,25 +100,36 @@ const MessagesContextProvider = ({ children }) => {
             }
             setMessages(updatedMessages)
         },
-        3000 )
+        3000 ) */
+
+        /* CORRECCIÓN */
+        setTimeout(() => {
+            setMessages(prev => 
+                prev.map(msg =>
+                    msg.id === newMessage.id ? { ...msg, status: 'received' } : msg
+                )
+            )
+        }, 3000)
     }
     
 
     const handleDeleteMessage = (message_id) => {
-        const updatedMessageList = []
+        /* const updatedMessageList = []
         for (const message of messages) {
             if (message.id !== message_id) {
                 updatedMessageList.push(message)
             }
         }
-        setMessages(updatedMessageList)
+        setMessages(updatedMessageList) */
+
+        setMessages(prev => prev.filter(msg => msg.id !== message_id))
     }
 
     // AGREGAR FUNCIONES NUEVAS
     // Agregar la función de editar un mensaje:
     const handleEditMessage = (message_id, newText) => {
         
-        const previousMessages = [...messages]
+        /* const previousMessages = [...messages]
         const updatedMessages = []
 
         for (const mesage of previousMessages) {
@@ -121,13 +145,19 @@ const MessagesContextProvider = ({ children }) => {
             }
         }
 
-        setMessages(updatedMessages)
+        setMessages(updatedMessages) */
+
+        setMessages(prev =>
+            prev.map(msg =>
+                msg.id === message_id ? { ...msg, text: newText, edited: true } : msg
+            )
+        )
     }
 
     // Agregar la función para marcar visualmente como "eliminado" un mensaje:
     // Para esta función hay que tener un componente donde se muestre cada mensaje
     const handleSoftDeleteMessage = (message_id) => {
-        const previousMessages = [...messages]
+        /* const previousMessages = [...messages]
         const updatedMessages = []
     
         for (const message of previousMessages) {
@@ -143,7 +173,15 @@ const MessagesContextProvider = ({ children }) => {
             }
         }
     
-        setMessages(updatedMessages)
+        setMessages(updatedMessages) */
+
+        setMessages(prev =>
+            prev.map(msg => 
+                msg.id === message_id
+                ? { ...msg, text: 'Mensaje eliminado', deleted: true }
+                : msg
+            )
+        )
     }
     
     return (
