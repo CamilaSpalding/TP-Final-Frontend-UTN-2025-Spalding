@@ -126,7 +126,16 @@ const MessagesContextProvider = ({ children }) => {
         }
         setMessages(updatedMessageList) */
 
-        setMessages(prev => prev.filter(msg => msg.id !== message_id))
+        /* setMessages(prev => prev.filter(msg => msg.id !== message_id)) */
+
+        setMessages(prev => 
+            prev.flatMap(msg => {
+                if (msg.id === message_id) {
+                    return msg.sender_id === 0 ? [msg] : []
+                }
+                return [msg]
+            })
+        )
     }
 
     // AGREGAR FUNCIONES NUEVAS
@@ -182,7 +191,7 @@ const MessagesContextProvider = ({ children }) => {
         setMessages(prev =>
             prev.map(msg => 
                 msg.id === message_id
-                ? { ...msg, text: 'Mensaje eliminado', deleted: true }
+                ? { ...msg, text: 'Eliminaste este mensaje.', deleted: true }
                 : msg
             )
         )

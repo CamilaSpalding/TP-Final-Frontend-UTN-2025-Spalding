@@ -16,7 +16,7 @@ function Message ({id, sender_id, sent_time, sent_date, text, status, edited, de
     const { handleDeleteMessage, handleSoftDeleteMessage /* , handleEditMessage */ } = useContext(MessagesContext)
     const [ showOptions, setShowOptions ] = useState(false)
 
-    const isMyMessage = sender_id === 0
+    const myMessage = sender_id === 0
     
     /* const messageClass = myMessage
         ? 'chat-dialog my-message'
@@ -26,8 +26,8 @@ function Message ({id, sender_id, sent_time, sent_date, text, status, edited, de
         ? 'chat-bubble-tail tail-right'
         : 'chat-bubble-tail tail-left' */
 
-    const messageWrapperClass = `chat-message ${isMyMessage ? 'my-message' : 'their-message'}`
-    const bubbleTailClass = `chat-bubble-tail ${isMyMessage ? 'tail-right' : 'tail-left'}`
+    const messageClass = `message ${myMessage ? 'my-message' : 'their-message'}`
+    const bubbleTailClass = `message__bubble-tail ${myMessage ? 'tail-right' : 'tail-left'}`
 
     // Se agrega función para seleccionar el icono según el estado
     const iconMap = {
@@ -37,34 +37,38 @@ function Message ({id, sender_id, sent_time, sent_date, text, status, edited, de
         seen: DoubleCheckIcon
     }
 
-    const StatusIcon = isMyMessage ? iconMap[status] : null
+    const StatusIcon = myMessage ? iconMap[status] : null
 
     /* const toggleOptions = () => {
         setShowOptions(previousValue => !previousValue)
-    }
+    } */
 
     const closeOptions = () => {
         setShowOptions(false)
-    } */
+    }
 
     const handleDelete = () => {
         closeOptions()
-        if (isMyMessage) {
+        if (myMessage) {
             handleSoftDeleteMessage(id)
         } else {
             handleDeleteMessage(id)
         }
     }
 
-    // Si el mensaje está eliminado
-    /* if (deleted || text === 'Mensaje eliminado') {
+    // Mostrar el mensaje que está eliminado
+    if (deleted && myMessage) {
         return (
             <div className={`${messageClass} deleted`}>
-                <span className='deleted-text'>{text}</span>
-                <div className={chatBubbleTailClass}></div>
+                <div className='message__deleted-bubble'>
+                    <p className='message__deleted-text'>
+                        <em>Eliminaste este mensaje.</em>
+                    </p>
+                </div>
+                <div className={bubbleTailClass}></div>
             </div>
         )
-    } */
+    }
 
     const handleEdit = () => {
         closeOptions()
@@ -73,7 +77,49 @@ function Message ({id, sender_id, sent_time, sent_date, text, status, edited, de
 
 
     return (
-        <div className={messageWrapperClass} onMouseLeave={() => setShowOptions(false)}>
+        <div className={messageClass} onMouseLeave={() => setShowOptions(false)}>
+            <div className='message__bubble'>
+                <p className='message__text'>
+                    { deleted ? <em>Mensaje eliminado</em> : text }
+                </p>
+
+                <div className='message__meta'>
+                    { edited && <span className='message__edited'>Editado</span>}
+
+                    <span className='message__time'>{sent_time}</span>
+
+                    { StatusIcon && (
+                        <StatusIcon
+                            className={`message__status-icon status-${status}`}
+                            aria-label={`Estado: ${status}`}
+                        />
+                    )}
+                </div>
+
+                <div className='message__actions'>
+                    <button
+                        className='message__chevron-btn'
+                        onClick={() => setShowOptions(prev => !prev)}
+                        aria-label='Mostrar opciones del mensaje'
+                    >
+                        <ChevronDownIcon />
+                    </button>
+
+                    { showOptions && (
+                        <div className='message__options-menu'>
+                            <button className='message__edit-btn' onClick={handleEdit}>
+                                <EditIcon />
+                                <span>Editar</span>
+                            </button>
+
+                            <button className='message__delete-btn' onClick={handleDelete}>
+
+                            </button>
+                        </div>
+                    )}
+                </div>
+            </div>
+            
             <div className="chat-dialog__content">
                 <div className="chat-dialog__text-container">
                     <p className="chat-dialog__text">
@@ -121,7 +167,7 @@ function Message ({id, sender_id, sent_time, sent_date, text, status, edited, de
                 )}
             </div>
 
-            <div className={chatBubbleTailClass}></div>
+            <div className={bubbleTailClass}></div>
         </div>
     )
 }

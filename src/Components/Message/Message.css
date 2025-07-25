@@ -1,3 +1,26 @@
+.message {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 75%;
+    margin: 8px 0px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.message.my-message {
+    align-self: flex-end;
+    background-color: var(--WA-color-bg-green);
+}
+
+.message.their-message {
+    align-self: flex-start;
+    background-color: var(--WA-color-white);
+}
+
 .chat-dialog {
     display: flex;
     flex-direction: column;
